@@ -3,31 +3,41 @@ import quizNodeExpress from "./data";
 import ProgressBar from "./ProgresBar";
 
 export default function QuizApp(props) {
-  const [currentQuestion, setcurrentQuestion] = useState(1);
+  const [currentQuestion, setcurrentQuestion] = useState(0);
   const [radioValue, setradioValue] = useState('');
   const [reponses, setreponses] = useState([])
   const [numQuestion, setnumQuestion] = useState(1);
 
   function increment(id, question, answer, result, explanation) {
-    const valeur = { id: id, question: question, result: result, answer: answer, explanation: explanation }
-    setreponses([...reponses, valeur])
+    const valeur = { id: id, question: question, result: result, answer: answer, explanation: explanation };
+    setreponses([...reponses, valeur]);
+    console.log(reponses);
+    
     setcurrentQuestion(currentQuestion + 1);
     setradioValue('');
     setnumQuestion(numQuestion + 1)
   }
 
-  function submit() { props.onData(reponses); }
+  function submit(id, question, answer, result, explanation) {
+    const val = { id: id, question: question, result: result, answer: answer, explanation: explanation }
+   const updated = [...reponses, val];
+    setreponses(updated);
+    console.log(updated);
+    
+    props.onData(updated); }
 
-  const current = quizNodeExpress.filter(q => q.id === currentQuestion);
+  const current = quizNodeExpress.filter(q => quizNodeExpress.indexOf(q) === currentQuestion);
+  console.log(current);
+  
   return (
     <div className="mt-30">
       {current.map((q) => {
         return (
           <div key={q.id} className="flex flex-col justify-center items-center py-8 px-4">
             <span className="m-10">
-              <ProgressBar current={numQuestion} total={quizNodeExpress.length} />
+              <ProgressBar current={numQuestion} percate={numQuestion*100/quizNodeExpress.length} total={quizNodeExpress.length} />
             </span>
-            {currentQuestion === q.id && (
+            { (
               <div className="w-full max-w-xl bg-white shadow-lg rounded-xl p-6 space-y-6">
                 <section>
                   <h2 className="text-xl font-semibold text-blue-700 mb-2">
@@ -52,8 +62,8 @@ export default function QuizApp(props) {
                         </li> );})}
                   </ul>
                   <div className="mt-6 flex justify-end">
-                    {currentQuestion === quizNodeExpress.length ? (
-                      <button className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition" disabled={!radioValue} onClick={submit}>
+                    {currentQuestion + 1 === quizNodeExpress.length ? (
+                      <button className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition" disabled={!radioValue} onClick={()=>submit(current[0].id, current[0].question, current[0].answer, radioValue, current[0].explanation)}>
                         Soumettre
                       </button>)
                       : (<button className={`${!radioValue ? "bg-gray-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700"}text-white px-4 py-2 rounded-lg transition`} onClick={() => increment(current[0].id, current[0].question, current[0].answer, radioValue, current[0].explanation)} disabled={!radioValue}>
@@ -64,4 +74,4 @@ export default function QuizApp(props) {
               </div>)}
           </div>);
       })}
-    </div>);}
+    </div>); }

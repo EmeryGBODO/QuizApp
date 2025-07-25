@@ -17,11 +17,11 @@ function App() {
 
         {childData && <button className="ml-[30vw] cursor-pointer hover:bg-gray-300 font-bold text-gray-500 p-2" onClick={() => { setStart(false); setChildData(null) }}>retour</button>}
         {!Start ?
-          <div class="mx-auto mt-50 w-[40vw] flex  h-fit shadow-lg overflow-hidden">
-            <div class="w-4/7 flex justify-center items-center">
-              <img class="w-[100%]" src="home.jpg" alt="" />
+          <div className="mx-auto mt-50 w-[40vw] flex  h-fit shadow-lg overflow-hidden">
+            <div className="w-4/7 flex justify-center items-center">
+              <img className="w-[100%]" src="home.jpg" alt="" />
             </div>
-            <div class="w-3/7  flex justify-center items-center">
+            <div className="w-3/7  flex justify-center items-center">
               <button onClick={StartButton} class="bg-orange-400 p-2 font-bold">Commencer</button>
             </div>
           </div>
