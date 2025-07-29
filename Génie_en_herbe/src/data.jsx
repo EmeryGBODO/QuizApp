@@ -570,246 +570,702 @@
 //   }
 // ];
 
+// const quizNodeExpress = [
+//   {
+//     id: 1,
+//     question: "Quelle balise est utilisée pour écrire du code PHP ?",
+//     options: [
+//       "<?php ?>",
+//       "<php> </php>",
+//       "<? ?>",
+//       "<script php> </script>"
+//     ],
+//     answer: "<?php ?>",
+//     explanation: "`<?php ?>` est la balise standard pour ouvrir et fermer du code PHP."
+//   },
+//   {
+//     id: 2,
+//     question: "Quelle fonction est utilisée pour afficher du texte en PHP ?",
+//     options: [
+//       "show()",
+//       "display()",
+//       "echo",
+//       "print_r()"
+//     ],
+//     answer: "echo",
+//     explanation: "`echo` est une structure de langage pour afficher des chaînes ou des variables à l'écran."
+//   },
+//   {
+//     id: 3,
+//     question: "Quelle est la syntaxe correcte pour déclarer une variable en PHP ?",
+//     options: [
+//       "let x = 10;",
+//       "int x = 10;",
+//       "$x = 10;",
+//       "x := 10;"
+//     ],
+//     answer: "$x = 10;",
+//     explanation: "Toutes les variables en PHP commencent par un `$`, suivi du nom de la variable."
+//   },
+//   {
+//     id: 4,
+//     question: "Quelle fonction PHP permet d’arrêter complètement l’exécution du script ?",
+//     options: [
+//       "stop()",
+//       "exit()",
+//       "die()",
+//       "break()"
+//     ],
+//     answer: "die()",
+//     explanation: "`die()` (ou `exit()`) termine immédiatement le script PHP en cours."
+//   },
+//   {
+//     id: 5,
+//     question: "Quelle superglobale contient les données envoyées par un formulaire en méthode POST ?",
+//     options: [
+//       "$_POST",
+//       "$_FORM",
+//       "$_REQUEST",
+//       "$_SEND"
+//     ],
+//     answer: "$_POST",
+//     explanation: "`$_POST` est une superglobale contenant toutes les données envoyées via méthode POST."
+//   },
+//   {
+//     id: 6,
+//     question: "Comment inclure un fichier externe en PHP ?",
+//     options: [
+//       "include 'fichier.php';",
+//       "import 'fichier.php';",
+//       "load('fichier.php');",
+//       "use fichier.php;"
+//     ],
+//     answer: "include 'fichier.php';",
+//     explanation: "`include` ou `require` permet d'ajouter le contenu d'un fichier externe dans le script courant."
+//   },
+//   {
+//     id: 7,
+//     question: "Quelle est la différence entre `include` et `require` ?",
+//     options: [
+//       "`require` génère une erreur fatale, `include` une alerte",
+//       "Il n'y a aucune différence",
+//       "`include` est plus rapide",
+//       "`require` ne fonctionne pas en local"
+//     ],
+//     answer: "`require` génère une erreur fatale, `include` une alerte",
+//     explanation: "Si le fichier est introuvable, `include` émet un warning, `require` arrête l'exécution du script."
+//   },
+//   {
+//     id: 8,
+//     question: "Quelle fonction permet de vérifier si une variable est définie ?",
+//     options: [
+//       "isset()",
+//       "defined()",
+//       "exists()",
+//       "issetted()"
+//     ],
+//     answer: "isset()",
+//     explanation: "`isset()` retourne true si la variable est définie et non null."
+//   },
+//   {
+//     id: 9,
+//     question: "Comment créer une fonction en PHP ?",
+//     options: [
+//       "function nom() {}",
+//       "fn nom() {}",
+//       "def nom() {}",
+//       "fonction nom() {}"
+//     ],
+//     answer: "function nom() {}",
+//     explanation: "La syntaxe correcte est `function nom() {}`."
+//   },
+//   {
+//     id: 10,
+//     question: "Quelle fonction permet de compter le nombre d’éléments dans un tableau ?",
+//     options: [
+//       "count()",
+//       "sizeof()",
+//       "length()",
+//       "array_length()"
+//     ],
+//     answer: "count()",
+//     explanation: "`count()` retourne le nombre d’éléments dans un tableau."
+//   },
+//   {
+//     id: 11,
+//     question: "Comment accéder à la première valeur d’un tableau `$arr` ?",
+//     options: [
+//       "$arr[1]",
+//       "$arr[0]",
+//       "arr[0]",
+//       "$arr->first()"
+//     ],
+//     answer: "$arr[0]",
+//     explanation: "En PHP, les tableaux commencent à l’indice 0, donc la première valeur est `$arr[0]`."
+//   },
+//   {
+//     id: 12,
+//     question: "Que retourne la fonction `isset($_GET['id'])` si la clé 'id' n'existe pas ?",
+//     options: [
+//       "true",
+//       "false",
+//       "0",
+//       "null"
+//     ],
+//     answer: "false",
+//     explanation: "`isset()` retourne `false` si la clé n’existe pas ou que sa valeur est `null`."
+//   },
+//   {
+//     id: 13,
+//     question: "Quelle est la portée d’une variable déclarée à l’intérieur d’une fonction ?",
+//     options: [
+//       "Globale",
+//       "Locale",
+//       "Publique",
+//       "Protégée"
+//     ],
+//     answer: "Locale",
+//     explanation: "Les variables déclarées dans une fonction sont accessibles uniquement dans cette fonction."
+//   },
+//   {
+//     id: 14,
+//     question: "Quelle structure permet de répéter du code tant qu’une condition est vraie ?",
+//     options: [
+//       "if",
+//       "for",
+//       "while",
+//       "switch"
+//     ],
+//     answer: "while",
+//     explanation: "`while` est utilisée pour exécuter un bloc de code tant qu’une condition est vraie."
+//   },
+//   {
+//     id: 15,
+//     question: "Comment définir une constante en PHP ?",
+//     options: [
+//       "const PI = 3.14;",
+//       "define('PI', 3.14);",
+//       "$PI = 3.14;",
+//       "constant PI = 3.14;"
+//     ],
+//     answer: "define('PI', 3.14);",
+//     explanation: "`define()` est la fonction classique pour déclarer une constante en PHP natif."
+//   },
+//   {
+//     id: 16,
+//     question: "Quelle est la valeur par défaut de `$_SESSION` avant l’appel de `session_start()` ?",
+//     options: [
+//       "null",
+//       "vide",
+//       "non défini",
+//       "false"
+//     ],
+//     answer: "non défini",
+//     explanation: "`$_SESSION` n’est pas accessible tant que `session_start()` n’a pas été appelé."
+//   },
+//   {
+//     id: 17,
+//     question: "Quelle fonction est utilisée pour envoyer un en-tête HTTP en PHP ?",
+//     options: [
+//       "header()",
+//       "setHeader()",
+//       "http_header()",
+//       "send()"
+//     ],
+//     answer: "header()",
+//     explanation: "`header()` permet d’envoyer des en-têtes HTTP avant tout affichage."
+//   },
+//   {
+//     id: 18,
+//     question: "Quelle extension de fichier est utilisée pour un fichier PHP ?",
+//     options: [
+//       ".ph",
+//       ".html",
+//       ".php",
+//       ".phtml"
+//     ],
+//     answer: ".php",
+//     explanation: "L’extension officielle d’un fichier PHP est `.php`."
+//   },
+//   {
+//     id: 19,
+//     question: "Comment vérifier si un fichier existe en PHP ?",
+//     options: [
+//       "exists('file.txt')",
+//       "file_exists('file.txt')",
+//       "check_file('file.txt')",
+//       "is_file('file.txt')"
+//     ],
+//     answer: "file_exists('file.txt')",
+//     explanation: "`file_exists()` vérifie si un fichier ou un dossier est présent sur le disque."
+//   },
+//   {
+//     id: 20,
+//     question: "Comment se nomme l’outil en ligne de commande de PHP pour exécuter un script ?",
+//     options: [
+//       "php-run",
+//       "php",
+//       "php_exec",
+//       "run-php"
+//     ],
+//     answer: "php",
+//     explanation: "`php` est la commande CLI pour exécuter un script en terminal (ex: `php index.php`)."
+//   }
+// ];
+
 const quizNodeExpress = [
   {
     id: 1,
-    question: "Quelle balise est utilisée pour écrire du code PHP ?",
-    options: [
-      "<?php ?>",
-      "<php> </php>",
-      "<? ?>",
-      "<script php> </script>"
-    ],
-    answer: "<?php ?>",
-    explanation: "`<?php ?>` est la balise standard pour ouvrir et fermer du code PHP."
+    question: "Quelle est la sortie de `echo '3' + 2 * '2 chats';` ?",
+    options: ["7", "9", "3 chats2", "Erreur"],
+    answer: "7",
+    explanation: "PHP convertit les chaînes en nombres jusqu'au premier caractère non numérique. Donc '3' + 2 * '2' = 3 + 4 = 7."
   },
   {
     id: 2,
-    question: "Quelle fonction est utilisée pour afficher du texte en PHP ?",
-    options: [
-      "show()",
-      "display()",
-      "echo",
-      "print_r()"
-    ],
-    answer: "echo",
-    explanation: "`echo` est une structure de langage pour afficher des chaînes ou des variables à l'écran."
+    question: "Quelle est la portée d’une variable déclarée avec `static` dans une fonction ?",
+    options: ["Globale", "Locale persistante", "Superglobale", "Partagée entre scripts"],
+    answer: "Locale persistante",
+    explanation: "`static` garde la valeur entre plusieurs appels à la fonction, mais reste locale à celle-ci."
   },
   {
     id: 3,
-    question: "Quelle est la syntaxe correcte pour déclarer une variable en PHP ?",
-    options: [
-      "let x = 10;",
-      "int x = 10;",
-      "$x = 10;",
-      "x := 10;"
-    ],
-    answer: "$x = 10;",
-    explanation: "Toutes les variables en PHP commencent par un `$`, suivi du nom de la variable."
+    question: "Que retourne `empty(0)` en PHP ?",
+    options: ["true", "false", "null", "Erreur"],
+    answer: "true",
+    explanation: "`empty()` retourne `true` pour les valeurs considérées comme vides, y compris 0."
   },
   {
     id: 4,
-    question: "Quelle fonction PHP permet d’arrêter complètement l’exécution du script ?",
-    options: [
-      "stop()",
-      "exit()",
-      "die()",
-      "break()"
-    ],
-    answer: "die()",
-    explanation: "`die()` (ou `exit()`) termine immédiatement le script PHP en cours."
+    question: "Peut-on utiliser `isset($var['cle'])` si `$var` n’est pas défini ?",
+    options: ["Oui", "Non", "Erreur", "Seulement en PHP 8+"],
+    answer: "Oui",
+    explanation: "`isset()` ne déclenche pas d'erreur si la variable n'existe pas. Elle retournera `false` discrètement."
   },
   {
     id: 5,
-    question: "Quelle superglobale contient les données envoyées par un formulaire en méthode POST ?",
+    question: "Quelle est la différence entre `==` et `===` en PHP ?",
     options: [
-      "$_POST",
-      "$_FORM",
-      "$_REQUEST",
-      "$_SEND"
+      "Aucune différence",
+      "`==` compare la valeur, `===` compare valeur et type",
+      "`===` est plus rapide",
+      "`==` fait une comparaison logique"
     ],
-    answer: "$_POST",
-    explanation: "`$_POST` est une superglobale contenant toutes les données envoyées via méthode POST."
+    answer: "`==` compare la valeur, `===` compare valeur et type",
+    explanation: "`==` fait une comparaison avec conversion de type, `===` compare sans conversion."
   },
   {
     id: 6,
-    question: "Comment inclure un fichier externe en PHP ?",
-    options: [
-      "include 'fichier.php';",
-      "import 'fichier.php';",
-      "load('fichier.php');",
-      "use fichier.php;"
-    ],
-    answer: "include 'fichier.php';",
-    explanation: "`include` ou `require` permet d'ajouter le contenu d'un fichier externe dans le script courant."
+    question: "Quelle est la sortie de `var_dump(null == false)` ?",
+    options: ["bool(true)", "bool(false)", "null", "Erreur"],
+    answer: "bool(true)",
+    explanation: "Piège ! `null == false` retourne `true` car PHP les considère comme équivalents faiblement."
   },
   {
     id: 7,
-    question: "Quelle est la différence entre `include` et `require` ?",
+    question: "Comment PHP gère-t-il les variables passées par référence ?",
     options: [
-      "`require` génère une erreur fatale, `include` une alerte",
-      "Il n'y a aucune différence",
-      "`include` est plus rapide",
-      "`require` ne fonctionne pas en local"
+      "Avec `ref()`",
+      "Avec `*`",
+      "Avec `&`",
+      "Les références ne sont pas supportées"
     ],
-    answer: "`require` génère une erreur fatale, `include` une alerte",
-    explanation: "Si le fichier est introuvable, `include` émet un warning, `require` arrête l'exécution du script."
+    answer: "Avec `&`",
+    explanation: "`&` permet de lier une variable à une autre par référence."
   },
   {
     id: 8,
-    question: "Quelle fonction permet de vérifier si une variable est définie ?",
-    options: [
-      "isset()",
-      "defined()",
-      "exists()",
-      "issetted()"
-    ],
-    answer: "isset()",
-    explanation: "`isset()` retourne true si la variable est définie et non null."
+    question: "Que retourne `isset($a)` après `unset($a)` ?",
+    options: ["true", "false", "null", "Erreur"],
+    answer: "false",
+    explanation: "Après `unset()`, la variable est supprimée. `isset()` retournera donc `false`."
   },
   {
     id: 9,
-    question: "Comment créer une fonction en PHP ?",
-    options: [
-      "function nom() {}",
-      "fn nom() {}",
-      "def nom() {}",
-      "fonction nom() {}"
-    ],
-    answer: "function nom() {}",
-    explanation: "La syntaxe correcte est `function nom() {}`."
+    question: "Que retourne `is_nan('NaN')` ?",
+    options: ["true", "false", "NaN", "Erreur"],
+    answer: "false",
+    explanation: "`is_nan()` vérifie une vraie valeur `NaN` mathématique, pas la chaîne 'NaN'."
   },
   {
     id: 10,
-    question: "Quelle fonction permet de compter le nombre d’éléments dans un tableau ?",
-    options: [
-      "count()",
-      "sizeof()",
-      "length()",
-      "array_length()"
-    ],
-    answer: "count()",
-    explanation: "`count()` retourne le nombre d’éléments dans un tableau."
+    question: "Quelle est la sortie de `echo true + true + false;` ?",
+    options: ["1", "2", "truefalse", "Erreur"],
+    answer: "2",
+    explanation: "En PHP, `true` = 1 et `false` = 0 lors de l’arithmétique."
   },
   {
     id: 11,
-    question: "Comment accéder à la première valeur d’un tableau `$arr` ?",
-    options: [
-      "$arr[1]",
-      "$arr[0]",
-      "arr[0]",
-      "$arr->first()"
-    ],
-    answer: "$arr[0]",
-    explanation: "En PHP, les tableaux commencent à l’indice 0, donc la première valeur est `$arr[0]`."
+    question: "Que fait `array_merge(['a'=>1], ['a'=>2])` ?",
+    options: ["Renvoie ['a'=>2]", "Renvoie ['a'=>1, 'a'=>2]", "Erreur", "Fusionne en conservant le 1er"],
+    answer: "Renvoie ['a'=>2]",
+    explanation: "Les clés identiques sont écrasées par celles de droite."
   },
   {
     id: 12,
-    question: "Que retourne la fonction `isset($_GET['id'])` si la clé 'id' n'existe pas ?",
+    question: "Quelle fonction permet de convertir une chaîne JSON en tableau PHP ?",
     options: [
-      "true",
-      "false",
-      "0",
-      "null"
+      "json_to_array()",
+      "parse_json()",
+      "json_decode()",
+      "json_parse_array()"
     ],
-    answer: "false",
-    explanation: "`isset()` retourne `false` si la clé n’existe pas ou que sa valeur est `null`."
+    answer: "json_decode()",
+    explanation: "`json_decode($json, true)` transforme un JSON en tableau associatif PHP."
   },
   {
     id: 13,
-    question: "Quelle est la portée d’une variable déclarée à l’intérieur d’une fonction ?",
+    question: "Quelle méthode permet de tester si une classe hérite d'une autre ?",
     options: [
-      "Globale",
-      "Locale",
-      "Publique",
-      "Protégée"
+      "inherits()",
+      "instanceof",
+      "extends()",
+      "childOf()"
     ],
-    answer: "Locale",
-    explanation: "Les variables déclarées dans une fonction sont accessibles uniquement dans cette fonction."
+    answer: "instanceof",
+    explanation: "`instanceof` permet de tester si un objet est issu d’une classe ou d’une classe parent."
   },
   {
     id: 14,
-    question: "Quelle structure permet de répéter du code tant qu’une condition est vraie ?",
+    question: "Que fait `explode('', 'abc')` ?",
     options: [
-      "if",
-      "for",
-      "while",
-      "switch"
+      "['a','b','c']",
+      "['abc']",
+      "Erreur",
+      "['','a','b','c','']"
     ],
-    answer: "while",
-    explanation: "`while` est utilisée pour exécuter un bloc de code tant qu’une condition est vraie."
+    answer: "Erreur",
+    explanation: "`explode()` ne peut pas avoir un séparateur vide. Cela génère une `ValueError` en PHP 8."
   },
   {
     id: 15,
-    question: "Comment définir une constante en PHP ?",
-    options: [
-      "const PI = 3.14;",
-      "define('PI', 3.14);",
-      "$PI = 3.14;",
-      "constant PI = 3.14;"
-    ],
-    answer: "define('PI', 3.14);",
-    explanation: "`define()` est la fonction classique pour déclarer une constante en PHP natif."
+    question: "Une classe peut-elle hériter de plusieurs classes en PHP ?",
+    options: ["Oui", "Non", "Seulement avec `use`", "En PHP 8+"],
+    answer: "Non",
+    explanation: "PHP ne supporte pas l'héritage multiple. On utilise des traits (`use`) pour cela."
   },
   {
     id: 16,
-    question: "Quelle est la valeur par défaut de `$_SESSION` avant l’appel de `session_start()` ?",
+    question: "Comment accéder à une constante de classe sans créer d'objet ?",
     options: [
-      "null",
-      "vide",
-      "non défini",
-      "false"
+      "$obj::CONST",
+      "MyClass::CONST",
+      "MyClass->CONST",
+      "const MyClass"
     ],
-    answer: "non défini",
-    explanation: "`$_SESSION` n’est pas accessible tant que `session_start()` n’a pas été appelé."
+    answer: "MyClass::CONST",
+    explanation: "On accède à une constante statique avec `::`, sans instancier la classe."
   },
   {
     id: 17,
-    question: "Quelle fonction est utilisée pour envoyer un en-tête HTTP en PHP ?",
+    question: "Comment PHP gère-t-il les erreurs fatales en PHP 7+ ?",
     options: [
-      "header()",
-      "setHeader()",
-      "http_header()",
-      "send()"
+      "Elles plantent toujours le script",
+      "Elles peuvent être catchées avec `Throwable`",
+      "Il faut `try/catch(ErrorException)`",
+      "On ne peut pas les attraper"
     ],
-    answer: "header()",
-    explanation: "`header()` permet d’envoyer des en-têtes HTTP avant tout affichage."
+    answer: "Elles peuvent être catchées avec `Throwable`",
+    explanation: "Depuis PHP 7, les `Error` peuvent être attrapées via `try/catch(Throwable)`."
   },
   {
     id: 18,
-    question: "Quelle extension de fichier est utilisée pour un fichier PHP ?",
+    question: "Quelle différence entre `include_once` et `require_once` ?",
     options: [
-      ".ph",
-      ".html",
-      ".php",
-      ".phtml"
+      "Aucune",
+      "`require_once` stoppe le script en cas d’erreur",
+      "`include_once` est plus rapide",
+      "`require_once` peut être appelé plusieurs fois"
     ],
-    answer: ".php",
-    explanation: "L’extension officielle d’un fichier PHP est `.php`."
+    answer: "`require_once` stoppe le script en cas d’erreur",
+    explanation: "`require_once` interrompt l’exécution si le fichier est introuvable, contrairement à `include_once`."
   },
   {
     id: 19,
-    question: "Comment vérifier si un fichier existe en PHP ?",
+    question: "Quelle fonction permet de supprimer tous les éléments d’un tableau ?",
     options: [
-      "exists('file.txt')",
-      "file_exists('file.txt')",
-      "check_file('file.txt')",
-      "is_file('file.txt')"
+      "unset($tab)",
+      "array_clear()",
+      "$tab = []",
+      "array_reset()"
     ],
-    answer: "file_exists('file.txt')",
-    explanation: "`file_exists()` vérifie si un fichier ou un dossier est présent sur le disque."
+    answer: "$tab = []",
+    explanation: "`unset($tab)` détruit la variable. `$tab = []` vide le tableau sans le supprimer."
   },
   {
     id: 20,
-    question: "Comment se nomme l’outil en ligne de commande de PHP pour exécuter un script ?",
+    question: "Est-il possible d’utiliser `continue` dans un `switch` ?",
+    options: ["Oui", "Non", "Uniquement dans une boucle", "Oui en PHP 7+"],
+    answer: "Uniquement dans une boucle",
+    explanation: "`continue` dans un `switch` seul produit une erreur ; il faut qu’il soit dans une boucle."
+  },
+  {
+    id: 21,
+    question: "Quelle est la valeur de `gettype([])` ?",
     options: [
-      "php-run",
-      "php",
-      "php_exec",
-      "run-php"
+      "array",
+      "object",
+      "null",
+      "resource"
     ],
-    answer: "php",
-    explanation: "`php` est la commande CLI pour exécuter un script en terminal (ex: `php index.php`)."
+    answer: "array",
+    explanation: "`gettype([])` retourne `array`, même si le tableau est vide."
+  },
+  {
+    id: 22,
+    question: "Comment savoir si une clé existe dans un tableau, même si sa valeur est `null` ?",
+    options: [
+      "isset()",
+      "array_key_exists()",
+      "in_array()",
+      "key_exists()"
+    ],
+    answer: "array_key_exists()",
+    explanation: "`isset()` retourne false si la valeur est `null`, mais `array_key_exists()` vérifie la présence de la clé."
+  },
+  {
+    id: 23,
+    question: "Quelle est la valeur de `true === 1` en PHP ?",
+    options: [
+      "true",
+      "false",
+      "null",
+      "Erreur"
+    ],
+    answer: "false",
+    explanation: "`===` compare type et valeur. `true` est booléen, `1` est entier → donc false."
+  },
+  {
+    id: 24,
+    question: "Que retourne `strpos('hello', 'l')` ?",
+    options: ["2", "1", "true", "false"],
+    answer: "2",
+    explanation: "`strpos()` retourne la première position (index 0-based) du caractère trouvé."
+  },
+  {
+    id: 25,
+    question: "Peut-on instancier une interface en PHP ?",
+    options: [
+      "Oui",
+      "Non",
+      "Uniquement si elle est abstraite",
+      "En PHP 8+"
+    ],
+    answer: "Non",
+    explanation: "Les interfaces ne peuvent pas être instanciées. Elles doivent être implémentées par des classes."
+  },
+  {
+    id:26,
+    question: "Quelle est la différence principale entre `public`, `private` et `protected` ?",
+    options: [
+      "`private` est accessible partout, `protected` dans la classe, `public` seulement dans les enfants",
+      "`public` est accessible partout, `private` seulement dans la classe, `protected` dans la classe et ses enfants",
+      "`protected` est plus sécurisé que `private`",
+      "Il n'y a aucune différence réelle"
+    ],
+    answer: "`public` est accessible partout, `private` seulement dans la classe, `protected` dans la classe et ses enfants",
+    explanation: "`private` limite l’accès à la classe elle-même, `protected` autorise l’accès aussi aux classes filles, `public` est accessible partout."
+  },
+  {
+    id:27,
+    question: "Quelle est la sortie du code suivant : `echo (new class { public function test() { return 1; } })->test();`",
+    options: ["Erreur", "1", "test", "null"],
+    answer: "1",
+    explanation: "C’est une **classe anonyme**. Elle est instanciée immédiatement et la méthode `test()` est appelée."
+  },
+  {
+    id:28,
+    question: "Que fait `final` devant une classe ?",
+    options: [
+      "Elle ne peut pas contenir d’héritage",
+      "Elle ne peut pas être étendue",
+      "Ses méthodes sont toutes privées",
+      "Elle ne peut pas contenir d’attribut"
+    ],
+    answer: "Elle ne peut pas être étendue",
+    explanation: "Une classe `final` ne peut pas être héritée. On peut toujours l’instancier directement."
+  },
+  {
+    id:29,
+    question: "Quelle est la différence entre `static` et une propriété d’instance ?",
+    options: [
+      "Aucune, elles sont toutes accessibles avec `->`",
+      "`static` est partagée entre toutes les instances",
+      "Une propriété d’instance est toujours constante",
+      "Une propriété `static` ne peut pas changer de valeur"
+    ],
+    answer: "`static` est partagée entre toutes les instances",
+    explanation: "Une propriété `static` appartient à la classe et non aux objets. Elle est donc partagée."
+  },
+  {
+    id:30,
+    question: "Quel mot-clé empêche une méthode d’être redéfinie dans une classe enfant ?",
+    options: ["private", "abstract", "final", "sealed"],
+    answer: "final",
+    explanation: "La méthode `final` ne peut pas être surchargée dans une classe qui hérite."
+  },
+  {
+    id:31,
+    question: "Peut-on accéder à une propriété `private` depuis une autre instance de la même classe ?",
+    options: ["Oui", "Non", "Seulement avec `friend`", "En PHP 8+"],
+    answer: "Oui",
+    explanation: "Une propriété `private` est accessible à toutes les instances **de la même classe**, même si ce n’est pas `$this`."
+  },
+  {
+    id:32,
+    question: "Que fait une méthode `__destruct()` ?",
+    options: [
+      "Elle initialise l'objet",
+      "Elle nettoie automatiquement les valeurs après instanciation",
+      "Elle est appelée quand l'objet est détruit ou libéré",
+      "Elle transforme l'objet en tableau"
+    ],
+    answer: "Elle est appelée quand l'objet est détruit ou libéré",
+    explanation: "`__destruct()` est appelée automatiquement quand l’objet est libéré (fin de script ou `unset`)."
+  },
+  {
+    id:33,
+    question: "Quelle est la différence entre `interface` et `abstract class` ?",
+    options: [
+      "Une interface peut contenir du code",
+      "Une classe abstraite peut avoir des propriétés et du code",
+      "Une interface peut être instanciée",
+      "Une classe abstraite ne peut pas être héritée"
+    ],
+    answer: "Une classe abstraite peut avoir des propriétés et du code",
+    explanation: "Les interfaces ne contiennent **aucune implémentation**. Une classe abstraite peut en contenir partiellement."
+  },
+  {
+    id:34,
+    question: "Comment appeler une méthode statique d’une classe sans créer d'objet ?",
+    options: [
+      "`new Class()->method()`",
+      "`Class::method()`",
+      "`Class->method()`",
+      "`method(Class)`"
+    ],
+    answer: "`Class::method()`",
+    explanation: "La syntaxe `Class::method()` appelle une méthode statique directement."
+  },
+  {
+    id: 35,
+    question: "Quel est le rôle de `__get($prop)` en PHP orienté objet ?",
+    options: [
+      "Accéder à des propriétés privées ou protégées dynamiquement",
+      "Créer un raccourci vers une méthode",
+      "Transformer la valeur d’un tableau",
+      "Lire automatiquement des fichiers externes"
+    ],
+    answer: "Accéder à des propriétés privées ou protégées dynamiquement",
+    explanation: "`__get()` est une méthode magique appelée quand on tente d’accéder à une propriété non accessible normalement."
+  }
+];
+
+const quizPhpPoo = [
+  {
+    id: 1,
+    question: "Quelle est la différence principale entre `public`, `private` et `protected` ?",
+    options: [
+      "`private` est accessible partout, `protected` dans la classe, `public` seulement dans les enfants",
+      "`public` est accessible partout, `private` seulement dans la classe, `protected` dans la classe et ses enfants",
+      "`protected` est plus sécurisé que `private`",
+      "Il n'y a aucune différence réelle"
+    ],
+    answer: "`public` est accessible partout, `private` seulement dans la classe, `protected` dans la classe et ses enfants",
+    explanation: "`private` limite l’accès à la classe elle-même, `protected` autorise l’accès aussi aux classes filles, `public` est accessible partout."
+  },
+  {
+    id: 2,
+    question: "Quelle est la sortie du code suivant : `echo (new class { public function test() { return 1; } })->test();`",
+    options: ["Erreur", "1", "test", "null"],
+    answer: "1",
+    explanation: "C’est une **classe anonyme**. Elle est instanciée immédiatement et la méthode `test()` est appelée."
+  },
+  {
+    id: 3,
+    question: "Que fait `final` devant une classe ?",
+    options: [
+      "Elle ne peut pas contenir d’héritage",
+      "Elle ne peut pas être étendue",
+      "Ses méthodes sont toutes privées",
+      "Elle ne peut pas contenir d’attribut"
+    ],
+    answer: "Elle ne peut pas être étendue",
+    explanation: "Une classe `final` ne peut pas être héritée. On peut toujours l’instancier directement."
+  },
+  {
+    id: 4,
+    question: "Quelle est la différence entre `static` et une propriété d’instance ?",
+    options: [
+      "Aucune, elles sont toutes accessibles avec `->`",
+      "`static` est partagée entre toutes les instances",
+      "Une propriété d’instance est toujours constante",
+      "Une propriété `static` ne peut pas changer de valeur"
+    ],
+    answer: "`static` est partagée entre toutes les instances",
+    explanation: "Une propriété `static` appartient à la classe et non aux objets. Elle est donc partagée."
+  },
+  {
+    id: 5,
+    question: "Quel mot-clé empêche une méthode d’être redéfinie dans une classe enfant ?",
+    options: ["private", "abstract", "final", "sealed"],
+    answer: "final",
+    explanation: "La méthode `final` ne peut pas être surchargée dans une classe qui hérite."
+  },
+  {
+    id: 6,
+    question: "Peut-on accéder à une propriété `private` depuis une autre instance de la même classe ?",
+    options: ["Oui", "Non", "Seulement avec `friend`", "En PHP 8+"],
+    answer: "Oui",
+    explanation: "Une propriété `private` est accessible à toutes les instances **de la même classe**, même si ce n’est pas `$this`."
+  },
+  {
+    id: 7,
+    question: "Que fait une méthode `__destruct()` ?",
+    options: [
+      "Elle initialise l'objet",
+      "Elle nettoie automatiquement les valeurs après instanciation",
+      "Elle est appelée quand l'objet est détruit ou libéré",
+      "Elle transforme l'objet en tableau"
+    ],
+    answer: "Elle est appelée quand l'objet est détruit ou libéré",
+    explanation: "`__destruct()` est appelée automatiquement quand l’objet est libéré (fin de script ou `unset`)."
+  },
+  {
+    id: 8,
+    question: "Quelle est la différence entre `interface` et `abstract class` ?",
+    options: [
+      "Une interface peut contenir du code",
+      "Une classe abstraite peut avoir des propriétés et du code",
+      "Une interface peut être instanciée",
+      "Une classe abstraite ne peut pas être héritée"
+    ],
+    answer: "Une classe abstraite peut avoir des propriétés et du code",
+    explanation: "Les interfaces ne contiennent **aucune implémentation**. Une classe abstraite peut en contenir partiellement."
+  },
+  {
+    id: 9,
+    question: "Comment appeler une méthode statique d’une classe sans créer d'objet ?",
+    options: [
+      "`new Class()->method()`",
+      "`Class::method()`",
+      "`Class->method()`",
+      "`method(Class)`"
+    ],
+    answer: "`Class::method()`",
+    explanation: "La syntaxe `Class::method()` appelle une méthode statique directement."
+  },
+  {
+    id: 10,
+    question: "Quel est le rôle de `__get($prop)` en PHP orienté objet ?",
+    options: [
+      "Accéder à des propriétés privées ou protégées dynamiquement",
+      "Créer un raccourci vers une méthode",
+      "Transformer la valeur d’un tableau",
+      "Lire automatiquement des fichiers externes"
+    ],
+    answer: "Accéder à des propriétés privées ou protégées dynamiquement",
+    explanation: "`__get()` est une méthode magique appelée quand on tente d’accéder à une propriété non accessible normalement."
   }
 ];
 
