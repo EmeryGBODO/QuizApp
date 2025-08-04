@@ -1,3 +1,5 @@
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 export default function Stats({ responses }) {
     const note = responses.filter(q => q.result === q.answer    ).length;
@@ -13,7 +15,7 @@ export default function Stats({ responses }) {
                     return (
                         <div key={q.id} className={`p-5 rounded-xl border-l-8 shadow-sm transition-all ${isCorrect ? "border-[#009cb2] bg-[#f0fdfa]" : "border-[#e8a500] bg-[#fff7eb]"}`}>
                             <h3 className="font-semibold text-lg mb-3 text-gray-800">
-                                <span className="text-gray-500">Question {index + 1} :</span> {q.question}
+                                <span className="text-gray-500">Question {index + 1} :</span> <SyntaxHighlighter>{q.question}</SyntaxHighlighter>
                             </h3>
                             <div className="space-y-1 text-sm text-gray-700">
                                 <p>
