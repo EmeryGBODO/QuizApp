@@ -3,6 +3,8 @@ import quiz from "../data/data";
 import ProgressBar from "./ProgresBar";
 import Stats from "./Stats";
 import Home from "./Home";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 export default function QuizApp() {
   const [currentQuestion, setcurrentQuestion] = useState(0);
@@ -57,6 +59,9 @@ export default function QuizApp() {
                     Question {currentQuestion + 1}
                   </h2>
                   <p className="text-gray-800 text-base sm:text-lg">{q.question}</p>
+                   {q.code && <pre className="bg-gray-100 p-4 rounded text-sm overflow-y-scroll overflow-x-scroll max-h-80">
+                 <SyntaxHighlighter language="php" style={dracula} customStyle={{ background: 'black', margin: 0 }}>{q.code}</SyntaxHighlighter>
+                </pre>}
                 </section>
                 <section>
                   <h3 className="text-base sm:text-lg font-medium text-gray-700 mb-4">
