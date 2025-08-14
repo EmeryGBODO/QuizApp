@@ -1,6 +1,10 @@
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 export default function Stats({ responses }) {
-    const note = responses.filter(q => q.result === q.answer    ).length;
+    const note = responses.filter(q => q.result === q.answer).length;
+    console.log(responses);
+    
     return (
         <div className="flex flex-col justify-center items-center">
             <div className="w-full max-w-3xl mx-auto p-6 space-y-6 bg-white rounded-2xl shadow-xl">
@@ -15,6 +19,9 @@ export default function Stats({ responses }) {
                             <h3 className="font-semibold text-lg mb-3 text-gray-800">
                                 <span className="text-gray-500">Question {index + 1} :</span> {q.question}
                             </h3>
+                            {q.code && <pre className="bg-gray-100 p-4 rounded text-sm overflow-y-scroll overflow-x-scroll max-h-80">
+                                <SyntaxHighlighter language="php" style={dracula} customStyle={{ background: 'black', margin: 0 }}>{q.code}</SyntaxHighlighter>
+                            </pre>}
                             <div className="space-y-1 text-sm text-gray-700">
                                 <p>
                                     <span className="font-medium">Résultat :</span>{" "} {isCorrect ? (
@@ -45,4 +52,5 @@ export default function Stats({ responses }) {
                 })}
             </div>
         </div>
-    );}
+    );
+}

@@ -15,16 +15,16 @@ export default function QuizApp() {
   const [showStats, setShowStats] = useState(false);
 
 
-  const increment = (id, question, answer, result, explanation) => {
-    const valeur = { id: id, question: question, result: result, answer: answer, explanation: explanation };
+  const increment = (id, question, answer, result, explanation, code=null) => {
+    const valeur = { id: id, question: question, code:code, result: result, answer: answer, explanation: explanation };
     setreponses([...reponses, valeur]);
     setcurrentQuestion(currentQuestion + 1);
     setradioValue('');
     setnumQuestion(numQuestion + 1);
   }
 
-  function submit(id, question, answer, result, explanation) {
-    const valeur = { id: id, question: question, result: result, answer: answer, explanation: explanation };
+  function submit(id, question, answer, result, explanation,code=null) {
+    const valeur = { id: id, question: question, code:code, result: result, answer: answer, explanation: explanation };
     setreponses([...reponses, valeur]);
     setShowStats(true);
   }
@@ -99,7 +99,8 @@ export default function QuizApp() {
                                         current[0].question,
                                         current[0].answer,
                                         radioValue,
-                                        current[0].explanation)}
+                                        current[0].explanation,
+                                      current[0].code)}
                       >
                         Soumettre
                       </button>
@@ -114,7 +115,8 @@ export default function QuizApp() {
                             current[0].question,
                             current[0].answer,
                             radioValue,
-                            current[0].explanation
+                            current[0].explanation,
+                            current[0].code
                           )
                         }
                       >
@@ -129,7 +131,7 @@ export default function QuizApp() {
         })}
       </div>
      :
-        <Stats responses={reponses} />}
+      <Stats responses={reponses} />}
     </div>
   );
 }
