@@ -1925,7 +1925,7 @@ $obj->inexistante();`,
   }
 ];
 
-export const quizCss = [
+export const quizCss_intermediaire = [
   {
     id: 1,
     code: true,
@@ -2233,6 +2233,689 @@ img {
   }
 ];
 
+export const quizCss_difficile = [
+  {
+    id: 1,
+    code: true,
+    question: `Quel sera l'affichage final ?
+
+<div class="box"></div>
+
+.box {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(red, transparent),
+              linear-gradient(to right, blue, transparent);
+  background-blend-mode: multiply;
+}`,
+    options: ["Un carré rouge", "Un carré bleu", "Un mélange rouge/bleu sombre", "Un carré transparent"],
+    answer: "Un mélange rouge/bleu sombre",
+    explanation: "background-blend-mode: multiply multiplie les couches, donnant une couleur sombre combinée."
+  },
+
+  {
+    id: 2,
+    code: false,
+    question: `Laquelle de ces propriétés déclenche un nouveau contexte de formatage (BFC) ?`,
+    options: ["float: left", "font-weight: bold", "background: red", "display: inline"],
+    answer: "float: left",
+    explanation: "float crée un BFC, modifiant le comportement des éléments flottants et des marges."
+  },
+
+  {
+    id: 3,
+    code: true,
+    question: `Que sélectionne ce sélecteur ?
+
+div:not(:first-child):nth-of-type(2)`,
+    options: [
+      "Le premier div",
+      "Le deuxième div seulement s’il n’est pas le premier enfant",
+      "Tous les div sauf le deuxième",
+      "Les div pairs"
+    ],
+    answer: "Le deuxième div seulement s’il n’est pas le premier enfant",
+    explanation: ":nth-of-type(2) cible le 2e du type, et :not(:first-child) confirme qu'il n'est pas le premier enfant."
+  },
+
+  {
+    id: 4,
+    code: true,
+    question: `Qu'affiche ce layout grid ?
+
+.grid {
+  display: grid;
+  grid-template-columns: 100px 1fr minmax(50px, 200px);
+}`,
+    options: [
+      "3 colonnes : fixe / flexible / flexible mais limitée",
+      "3 colonnes flexibles uniquement",
+      "Une seule colonne",
+      "3 colonnes de largeur égale"
+    ],
+    answer: "3 colonnes : fixe / flexible / flexible mais limitée",
+    explanation: "minmax(50px, 200px) limite l’espace entre 50 et 200px."
+  },
+
+  {
+    id: 5,
+    code: true,
+    question: `Quelle propriété est surchargée ici ?
+
+.box {
+  padding: 20px;
+  padding-inline: 5px;
+}`,
+    options: [
+      "padding-top et padding-bottom",
+      "padding-left et padding-right",
+      "Tout le padding",
+      "Aucun"
+    ],
+    answer: "padding-left et padding-right",
+    explanation: "padding-inline remplace les côtés inline (gauche/droite)."
+  },
+
+  {
+    id: 6,
+    code: false,
+    question: `Quelle propriété permet de définir la priorité dans un layout flex en absence de contraintes explicites ?`,
+    options: ["flex-grow", "flex-wrap", "align-items", "order"],
+    answer: "flex-grow",
+    explanation: "flex-grow décide comment l’espace libre est distribué."
+  },
+
+  {
+    id: 7,
+    code: true,
+    question: `Que va faire ce code ?
+
+img {
+  width: clamp(200px, 50vw, 600px);
+}`,
+    options: [
+      "Toujours 50vw",
+      "Toujours 600px",
+      "Un width compris entre 200px et 600px selon 50vw",
+      "Un width exactement 200px"
+    ],
+    answer: "Un width compris entre 200px et 600px selon 50vw",
+    explanation: "clamp(min, ideal, max) limite la valeur entre min et max."
+  },
+
+  {
+    id: 8,
+    code: false,
+    question: `Quelle est la spécificité exacte du sélecteur : header nav ul li.active > a:hover ?`,
+    options: [
+      "0-1-4-2",
+      "0-1-3-3",
+      "0-2-3-2",
+      "0-1-5-1"
+    ],
+    answer: "0-1-4-2",
+    explanation: "1 classe (.active), 4 éléments (header, nav, ul, li), 1 élément (a) + 1 pseudo-class (:hover). Total = 0-1-4-2."
+  },
+
+  {
+    id: 9,
+    code: true,
+    question: `Que vaut la propriété finalisée ?
+
+.box {
+  width: 300px;
+  max-width: 200px;
+}`,
+    options: ["300px", "200px", "auto", "Erreur"],
+    answer: "200px",
+    explanation: "max-width limite la valeur finale."
+  },
+
+  {
+    id: 10,
+    code: true,
+    question: `Quel affichage produit ce code ?
+
+.box {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}`,
+    options: [
+      "Centre vertical fixe dans le viewport",
+      "Centre vertical dans son parent",
+      "Déplacement de 50% de la hauteur de l’élément",
+      "Déplacement de 50% du parent"
+    ],
+    answer: "Centre vertical dans son parent",
+    explanation: "top:50% avance l’élément au milieu, translateY(-50%) le recentre."
+  },
+
+  {
+    id: 11,
+    code: true,
+    question: `Que fera ce code avec un <span> ?
+
+span {
+  display: contents;
+}`,
+    options: [
+      "Le span devient invisible mais son contenu reste dans le flux",
+      "Le span est supprimé du DOM",
+      "Le span devient bloquant",
+      "Le span devient inline-flex"
+    ],
+    answer: "Le span devient invisible mais son contenu reste dans le flux",
+    explanation: "display: contents fait disparaître la boîte de l’élément, mais garde ses enfants."
+  },
+
+  {
+    id: 12,
+    code: false,
+    question: `Quelle propriété active l’anti-overflow dans un conteneur de type flex ?`,
+    options: ["overflow-wrap: break-word", "white-space: nowrap", "flex-shrink: 0", "align-content: stretch"],
+    answer: "overflow-wrap: break-word",
+    explanation: "overflow-wrap casse les mots pour éviter le débordement."
+  },
+
+  {
+    id: 13,
+    code: true,
+    question: `Quel sera l’effet ?
+
+.box {
+  filter: drop-shadow(0 0 10px red);
+}`,
+    options: [
+      "Même effet que box-shadow",
+      "Une ombre externe basée sur la forme réelle du contenu",
+      "Une ombre interne",
+      "Une bordure rouge"
+    ],
+    answer: "Une ombre externe basée sur la forme réelle du contenu",
+    explanation: "drop-shadow s’applique à la forme rendue (ex. images avec transparence)."
+  },
+
+  {
+    id: 14,
+    code: true,
+    question: `Quel sera le contenu affiché ?
+
+.box::before {
+  content: attr(data-text) "!!!";
+}`,
+    options: [
+      "Le texte du HTML suivi de !!!",
+      "Le contenu de l’attribut data-text suivi de !!!",
+      "Rien",
+      "Une erreur"
+    ],
+    answer: "Le contenu de l’attribut data-text suivi de !!!",
+    explanation: "attr() insère la valeur d’un attribut HTML."
+  },
+
+  {
+    id: 15,
+    code: false,
+    question: `Quel est l’effet d’un stacking context sur z-index ?`,
+    options: [
+      "z-index ne fonctionne plus",
+      "Les enfants ne peuvent jamais se superposer",
+      "Le z-index est limité au contexte parent",
+      "Le z-index agit globalement"
+    ],
+    answer: "Le z-index est limité au contexte parent",
+    explanation: "Un stacking context isole la hiérarchie d’empilement."
+  },
+
+  {
+    id: 16,
+    code: true,
+    question: `Quel comportement pour :
+
+.container {
+  display: grid;
+  grid-auto-flow: column;
+}`,
+    options: [
+      "Les éléments seront ajoutés en colonnes automatiquement",
+      "Les éléments seront ajoutés en lignes automatiquement",
+      "Les éléments seront empilés verticalement",
+      "Le layout est invalide"
+    ],
+    answer: "Les éléments seront ajoutés en colonnes automatiquement",
+    explanation: "grid-auto-flow détermine comment les items non placés sont générés."
+  },
+
+  {
+    id: 17,
+    code: true,
+    question: `Quel est l’effet combiné ?
+
+.box {
+  transform: scale(2);
+  transform-origin: top left;
+}`,
+    options: [
+      "L'élément double de taille à partir du coin supérieur gauche",
+      "L'élément se centre puis s'agrandit",
+      "L'élément se déforme horizontalement",
+      "Aucun effet"
+    ],
+    answer: "L'élément double de taille à partir du coin supérieur gauche",
+    explanation: "transform-origin définit le point d’ancrage de la transformation."
+  },
+
+  {
+    id: 18,
+    code: true,
+    question: `Que fait ce code ?
+
+.box {
+  aspect-ratio: 16 / 9;
+}`,
+    options: [
+      "Rien sans width",
+      "Force un ratio largeur/hauteur de 16:9",
+      "Étire l’image en 16:9",
+      "Crée un container responsive"
+    ],
+    answer: "Force un ratio largeur/hauteur de 16:9",
+    explanation: "aspect-ratio impose un ratio intrinsèque."
+  },
+
+  {
+    id: 19,
+    code: true,
+    question: `Quel est le comportement ?
+
+.box {
+  pointer-events: none;
+}`,
+    options: [
+      "L’élément ne reçoit plus aucun clic",
+      "L’élément devient transparent",
+      "L’élément passe derrière tous les autres",
+      "Le texte devient non sélectionnable"
+    ],
+    answer: "L’élément ne reçoit plus aucun clic",
+    explanation: "pointer-events désactive l'interaction souris."
+  },
+
+  {
+    id: 20,
+    code: true,
+    question: `Quel est le résultat ?
+
+.box {
+  background: red;
+  mix-blend-mode: screen;
+}`,
+    options: [
+      "Le rouge se mélange en assombrissant le fond",
+      "Le rouge se mélange en éclaircissant le fond",
+      "Le rouge remplace le fond",
+      "Aucun effet"
+    ],
+    answer: "Le rouge se mélange en éclaircissant le fond",
+    explanation: "screen est une opération d'éclaircissement utilisée en blend-mode."
+  }
+]
+
+export const quizCss_avance = [
+  {
+    id: 1,
+    code: true,
+    question: `Quel sera le comportement ?
+
+.container {
+  display: flex;
+}
+.item {
+  flex: 1 1 0;
+  min-width: 300px;
+}`,
+    options: [
+      "Les éléments prennent tous la même largeur sauf si min-width force un retour à la ligne",
+      "Les éléments auront toujours 300px",
+      "Les éléments ignorent min-width",
+      "Le layout échoue"
+    ],
+    answer: "Les éléments prennent tous la même largeur sauf si min-width force un retour à la ligne",
+    explanation: "flex-basis:0 distribue l'espace proportionnellement, mais min-width impose une limite."
+  },
+
+  {
+    id: 2,
+    code: true,
+    question: `Quelle couleur s'affiche ?
+
+.box {
+  color: red;
+  color: rgb(255 0 0 / 50%);
+}`,
+    options: ["Rouge opaque", "Rouge semi-transparent", "Aucune couleur", "Erreur"],
+    answer: "Rouge semi-transparent",
+    explanation: "La dernière déclaration écrase la précédente."
+  },
+
+  {
+    id: 3,
+    code: true,
+    question: `Que sélectionne exactement ce sélecteur ?
+
+section > :not(h2):first-of-type`,
+    options: [
+      "Le premier enfant de section qui n'est pas un h2",
+      "Le premier h2 de section",
+      "Tous les enfants sauf h2",
+      "Le premier élément de section"
+    ],
+    answer: "Le premier enfant de section qui n'est pas un h2",
+    explanation: "La pseudo-class first-of-type s'applique après le filtrage de :not()."
+  },
+
+  {
+    id: 4,
+    code: true,
+    question: `Quel effet crée ce code ?
+
+.box {
+  mask-image: radial-gradient(circle, transparent 40%, black 41%);
+}`,
+    options: [
+      "Un cercle transparent au centre",
+      "Un cercle opaque au centre",
+      "Une bordure circulaire",
+      "Aucun effet visible"
+    ],
+    answer: "Un cercle opaque au centre",
+    explanation: "mask-image masque le transparent et montre le noir."
+  },
+
+  {
+    id: 5,
+    code: true,
+    question: `Quel est le résultat final ?
+
+.box {
+  width: fit-content;
+  padding: 20px;
+}`,
+    options: [
+      "La largeur dépend du contenu + padding",
+      "La largeur ignore le padding",
+      "La largeur prend toute la ligne",
+      "Le contenu déborde"
+    ],
+    answer: "La largeur dépend du contenu + padding",
+    explanation: "fit-content ajuste la boîte à son contenu, puis padding s’ajoute."
+  },
+
+  {
+    id: 6,
+    code: false,
+    question: `Quelle propriété CSS crée un stacking context ?`,
+    options: ["opacity: 0.8", "padding: 10px", "background: none", "display: inline"],
+    answer: "opacity: 0.8",
+    explanation: "Toute valeur d’opacité <1 crée un stacking context."
+  },
+
+  {
+    id: 7,
+    code: true,
+    question: `Quel effet produit ce code ?
+
+.box {
+  backdrop-filter: blur(10px);
+}`,
+    options: [
+      "Floute le contenu de .box",
+      "Floute l'arrière-plan derrière .box",
+      "Floute seulement le texte dans .box",
+      "N’a aucun effet sans transform"
+    ],
+    answer: "Floute l'arrière-plan derrière .box",
+    explanation: "backdrop-filter affecte l’arrière-plan, pas l’élément."
+  },
+
+  {
+    id: 8,
+    code: true,
+    question: `Que fait scroll-margin-top ici ?
+
+h2 {
+  scroll-margin-top: 80px;
+}`,
+    options: [
+      "Ajoute 80px de marge au h2",
+      "Décale l’ancre de 80px lors du scroll ancré",
+      "Ajoute un margin-top normal",
+      "Ralentit le scroll"
+    ],
+    answer: "Décale l’ancre de 80px lors du scroll ancré",
+    explanation: "scroll-margin ajuste la position finale du scroll où l’élément s'arrête."
+  },
+
+  {
+    id: 9,
+    code: true,
+    question: `Que produit ce code ?
+
+.box {
+  border: 10px solid transparent;
+  border-image: linear-gradient(to right, red, blue) 1;
+}`,
+    options: [
+      "Un dégradé sur la bordure",
+      "Une bordure transparente",
+      "Une bordure bleue uniquement",
+      "Un fond dégradé"
+    ],
+    answer: "Un dégradé sur la bordure",
+    explanation: "border-image applique le gradient sur la bordure."
+  },
+
+  {
+    id: 10,
+    code: true,
+    question: `Quelle valeur prend finalement width ?
+
+.box {
+  width: min(50vw, 400px, 100%);
+}`,
+    options: [
+      "Toujours 400px",
+      "La plus petite des trois valeurs",
+      "La plus grande des trois valeurs",
+      "100% toujours"
+    ],
+    answer: "La plus petite des trois valeurs",
+    explanation: "min() retourne la valeur minimale parmi ses arguments."
+  },
+
+  {
+    id: 11,
+    code: true,
+    question: `Que va faire ce code ?
+
+.box {
+  overflow: clip;
+}`,
+    options: [
+      "Masque le contenu sans possibilité de scroll",
+      "Masque mais génère un scroll",
+      "Montre toujours tout le contenu",
+      "Équivaut à overflow: hidden auto"
+    ],
+    answer: "Masque le contenu sans possibilité de scroll",
+    explanation: "overflow: clip coupe comme hidden mais interdit le scroll."
+  },
+
+  {
+    id: 12,
+    code: false,
+    question: `Quelle est la différence principale entre ::before et ::marker ?`,
+    options: [
+      "::marker ne s'applique qu'aux listes",
+      "::before est réservé aux tableaux",
+      "::marker peut contenir du HTML",
+      "Aucune différence"
+    ],
+    answer: "::marker ne s'applique qu'aux listes",
+    explanation: "Le pseudo-élément ::marker cible les puces de liste."
+  },
+
+  {
+    id: 13,
+    code: true,
+    question: `Que fait ce code ?
+
+.box {
+  isolation: isolate;
+}`,
+    options: [
+      "Créé un nouveau stacking context",
+      "Sépare l’élément du flux",
+      "Désactive les mix-blend-mode",
+      "Aucune différence visuelle"
+    ],
+    answer: "Créé un nouveau stacking context",
+    explanation: "isolation: isolate force l'élément à isoler le contexte d'empilement."
+  },
+
+  {
+    id: 14,
+    code: true,
+    question: `Quel sera l’effet final ?
+
+.box {
+  display: flex;
+  align-items: stretch;
+}
+img {
+  object-fit: cover;
+}`,
+    options: [
+      "L’image occupe tout l'espace disponible en remplissant son container",
+      "L’image garde ses proportions sans recadrage",
+      "L’image est déformée",
+      "L’image disparaît"
+    ],
+    answer: "L’image occupe tout l'espace disponible en remplissant son container",
+    explanation: "object-fit: cover remplit tout en recadrant si nécessaire."
+  },
+
+  {
+    id: 15,
+    code: true,
+    question: `Que fait ce sélecteur ?
+
+:where(.a, .b, .c) div`,
+    options: [
+      "Sélectionne div .a uniquement",
+      "Sélectionne div dans .a, .b ou .c sans ajouter de spécificité",
+      "Ajoute plus de spécificité que :is()",
+      "Ne fonctionne pas"
+    ],
+    answer: "Sélectionne div dans .a, .b ou .c sans ajouter de spécificité",
+    explanation: ":where() a spécificité 0, contrairement à :is()."
+  },
+
+  {
+    id: 16,
+    code: true,
+    question: `Quel est le résultat de ce calcul CSS ?
+
+.box {
+  width: calc(100% - 2rem - 10px);
+}`,
+    options: [
+      "La largeur est réduite de 2rem et 10px",
+      "Impossible : calc ne peut pas mélanger rem et px",
+      "La valeur finale est toujours 100%",
+      "Une erreur est générée"
+    ],
+    answer: "La largeur est réduite de 2rem et 10px",
+    explanation: "calc() accepte le mélange des unités compatibles."
+  },
+
+  {
+    id: 17,
+    code: true,
+    question: `Que produit ce code ?
+
+.box {
+  container-type: inline-size;
+}`,
+    options: [
+      "Active les container queries basées sur la largeur",
+      "Active les media queries internes",
+      "Aucun effet visible",
+      "Transforme le conteneur en block"
+    ],
+    answer: "Active les container queries basées sur la largeur",
+    explanation: "inline-size crée un conteneur dimensionnel pour @container."
+  },
+
+  {
+    id: 18,
+    code: true,
+    question: `Que fait ce code avec une image transparente ?
+
+img {
+  mix-blend-mode: multiply;
+}`,
+    options: [
+      "Multiplie la couleur de l'image avec le fond",
+      "Rend le fond transparent",
+      "Supprime la transparence",
+      "Inverse la couleur"
+    ],
+    answer: "Multiplie la couleur de l'image avec le fond",
+    explanation: "multiply assombrit en multipliant les couches."
+  },
+
+  {
+    id: 19,
+    code: true,
+    question: `Quel sera le comportement ?
+
+.box {
+  display: grid;
+  place-items: baseline;
+}`,
+    options: [
+      "Centre le contenu",
+      "Aligne selon la baseline des textes",
+      "Équivaut à place-items: center",
+      "Ignore baseline"
+    ],
+    answer: "Aligne selon la baseline des textes",
+    explanation: "place-items: baseline aligne horizontalement ET verticalement sur la baseline."
+  },
+
+  {
+    id: 20,
+    code: true,
+    question: `Que fait ce code ?
+
+.box {
+  writing-mode: vertical-rl;
+}`,
+    options: [
+      "Écrit le texte verticalement de droite à gauche",
+      "Inverse le texte horizontalement",
+      "Décale le texte vers la droite",
+      "Aucun effet"
+    ],
+    answer: "Écrit le texte verticalement de droite à gauche",
+    explanation: "writing-mode modifie l'orientation de la ligne et du texte."
+  }
+]
+
+
+
 export const quizCategories = [
   {
     id: 'nodejs-facile',
@@ -2260,8 +2943,14 @@ export const quizCategories = [
   },
   {
     id: 'css',
-    title: 'CSS - Styles et Layout',
+    title: 'CSS 1- Styles et Layout',
     description: 'Questions sur CSS, Flexbox, Grid et propriétés',
-    questions: quizCss
-  }
+    questions: quizCss_intermediaire
+  },
+  {
+    id: 'css3',
+      title: 'CSS 3- Styles et Layout',
+        description: 'Questions avancées sur CSS, Flexbox, Grid et propriétés',
+          questions: quizCss_avance
+  },
 ]
