@@ -2,49 +2,95 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 export default function Stats({ responses }) {
-    const note = responses.filter(q => q.result === q.answer    ).length;
+    const note = responses.filter(q => q.result === q.answer).length;
+    const percentage = Math.round((note / responses.length) * 100);
+    
     return (
-        <div className="flex flex-col justify-center items-center">
-            <div className="w-full max-w-3xl mx-auto p-6 space-y-6 bg-white rounded-2xl shadow-xl">
-                <h2 className="text-3xl font-extrabold text-center text-[#009cb2] tracking-wide">
-                    📊 Résultats du Quiz (<span>Note:</span><span> {note} / {responses.length} </span>)
-                </h2>
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-8 px-4">
+            <div className="max-w-4xl mx-auto">
+                {/* Header avec score */}
+                <div className="bg-white rounded-2xl shadow-xl p-8 mb-8 text-center">
+                    <div className="text-6xl mb-4">{percentage >= 70 ? '🎉' : percentage >= 50 ? '👍' : '📚'}</div>
+                    <h1 className="text-4xl font-bold text-gray-800 mb-2">Résultats du Quiz</h1>
+                    <div className="text-2xl font-semibold text-blue-600 mb-4">
+                        {note} / {responses.length} ({percentage}%)
+                    </div>
+                    <div className={`inline-block px-6 py-2 rounded-full text-white font-medium ${
+                        percentage >= 70 ? 'bg-green-500' : 
+                        percentage >= 50 ? 'bg-yellow-500' : 'bg-red-500'
+                    }`}>
+                        {percentage >= 70 ? 'Excellent !' : 
+                         percentage >= 50 ? 'Bien joué !' : 'À améliorer'}
+                    </div>
+                </div>
 
-                {responses.map((q, index) => {
-                    const isCorrect = q.result === q.answer;
-                    return (
-                        <div key={q.id} className={`p-5 rounded-xl border-l-8 shadow-sm transition-all ${isCorrect ? "border-[#009cb2] bg-[#f0fdfa]" : "border-[#e8a500] bg-[#fff7eb]"}`}>
-                            <h3 className="font-semibold text-lg mb-3 text-gray-800">
-                                <span className="text-gray-500">Question {index + 1} :</span> <SyntaxHighlighter>{q.question}</SyntaxHighlighter>
-                            </h3>
-                            <div className="space-y-1 text-sm text-gray-700">
-                                <p>
-                                    <span className="font-medium">Résultat :</span>{" "} {isCorrect ? (
-                                        <span className="text-[#009cb2] font-semibold">✅ Correct</span>
-                                    ) : (
-                                        <span className="text-[#e8a500] font-semibold">❌ Faux</span>
-                                    )}
-                                </p>
-                                <p>
-                                    <span className="font-medium">Votre réponse :</span>{" "}
-                                    <span className={isCorrect ? "text-[#009cb2]" : "text-[#e8a500]"}>
-                                        {q.result}
-                                    </span>
-                                </p>
-                                {!isCorrect && (
-                                    <p>
-                                        <span className="font-medium">Bonne réponse :</span>{" "}
-                                        <span className="text-[#009cb2]">{q.answer}</span>
-                                    </p>
-                                )}
-                                <p className="pt-2">
-                                    <span className="font-medium">💡 Explication :</span>{" "}
-                                    <span className="text-gray-800">{q.explanation}</span>
-                                </p>
+                {/* Questions détaillées */}
+                <div className="space-y-6">
+                    {responses.map((q, index) => {
+                        const isCorrect = q.result === q.answer;
+                        return (
+                            <div key={q.id} className={`bg-white rounded-xl shadow-lg overflow-hidden border-l-4 ${
+                                isCorrect ? 'border-green-500' : 'border-red-500'
+                            }`}>
+                                <div className="p-6">
+                                    {/* En-tête question */}
+                                    <div className="flex items-center justify-between mb-4">
+                                        <h3 className="text-lg font-semibold text-gray-800">
+                                            Question {index + 1}
+                                        </h3>
+                                        <div className={`px-3 py-1 rounded-full text-sm font-medium ${
+                                            isCorrect ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+                                        }`}>
+                                            {isCorrect ? '✅ Correct' : '❌ Incorrect'}
+                                        </div>
+                                    </div>
+
+                                    {/* Question avec code ou texte */}
+                                    <div className="mb-4">
+                                        {q.code ? (
+                                            <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto">
+                                                <SyntaxHighlighter 
+                                                    language="php" 
+                                                    style={dracula} 
+                                                    customStyle={{ background: 'transparent', margin: 0 }}
+                                                >
+                                                    {q.question}
+                                                </SyntaxHighlighter>
+                                            </div>
+                                        ) : (
+                                            <p className="text-gray-700 text-base leading-relaxed">{q.question}</p>
+                                        )}
+                                    </div>
+
+                                    {/* Réponses */}
+                                    <div className="grid md:grid-cols-2 gap-4 mb-4">
+                                        <div className="bg-gray-50 p-4 rounded-lg">
+                                            <p className="text-sm font-medium text-gray-600 mb-1">Votre réponse</p>
+                                            <p className={`font-medium ${
+                                                isCorrect ? 'text-green-600' : 'text-red-600'
+                                            }`}>
+                                                {q.result}
+                                            </p>
+                                        </div>
+                                        {!isCorrect && (
+                                            <div className="bg-green-50 p-4 rounded-lg">
+                                                <p className="text-sm font-medium text-gray-600 mb-1">Bonne réponse</p>
+                                                <p className="font-medium text-green-600">{q.answer}</p>
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    {/* Explication */}
+                                    <div className="bg-blue-50 p-4 rounded-lg">
+                                        <p className="text-sm font-medium text-blue-800 mb-2">💡 Explication</p>
+                                        <p className="text-blue-700 text-sm leading-relaxed">{q.explanation}</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    );
-                })}
+                        );
+                    })}
+                </div>
             </div>
         </div>
-    );}
+    );
+}

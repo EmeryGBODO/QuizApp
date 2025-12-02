@@ -1,90 +1,99 @@
-// const quizNodeExpress = [
-//   {
-//     id: 1,
-//     question: "Qu'est-ce que Node.js ?",
-//     options: [
-//       "Un framework JavaScript pour le frontend",
-//       "Un moteur de base de données",
-//       "Un environnement d'exécution JavaScript côté serveur",
-//       "Une bibliothèque pour manipuler le DOM"
-//     ],
-//     answer: "Un environnement d'exécution JavaScript côté serveur",
-//     explanation: "Node.js permet d'exécuter du JavaScript en dehors du navigateur, notamment pour créer des serveurs et des applications backend."
-//   },
-//   {
-//     id: 2,
-//     question: "Quel module Node.js est utilisé pour créer un serveur HTTP ?",
-//     options: [
-//       "url",
-//       "http",
-//       "fs",
-//       "net"
-//     ],
-//     answer: "http",
-//     explanation: "Le module 'http' de Node.js permet de créer des serveurs HTTP de manière native, sans dépendances externes."
-//   },
-//   {
-//     id: 3,
-//     question: "À quoi sert Express.js ?",
-//     options: [
-//       "À interroger des bases de données",
-//       "À créer des interfaces graphiques",
-//       "À créer des applications web en simplifiant la gestion des routes et middlewares",
-//       "À compiler du code JavaScript"
-//     ],
-//     answer: "À créer des applications web en simplifiant la gestion des routes et middlewares",
-//     explanation: "Express est un framework minimaliste et flexible pour créer des applications web en Node.js, avec un système de routage puissant."
-//   },
-//   {
-//     id: 4,
-//     question: "Comment définit-on une route GET en Express ?",
-//     options: [
-//       "app.get('/route', callback)",
-//       "app.route('/route').get(callback)",
-//       "app.GET('/route', callback)",
-//       "server.get('/route', callback)"
-//     ],
-//     answer: "app.get('/route', callback)",
-//     explanation: "La méthode `app.get()` d'Express permet de gérer une requête HTTP GET vers une route spécifique."
-//   },
-//   {
-//     id: 5,
-//     question: "Quel middleware permet de parser les données JSON dans Express ?",
-//     options: [
-//       "express.urlencoded()",
-//       "express.text()",
-//       "express.json()",
-//       "bodyParser.text()"
-//     ],
-//     answer: "express.json()",
-//     explanation: "`express.json()` est un middleware intégré d'Express qui permet de parser le corps des requêtes en JSON."
-//   },
-//   {
-//     id: 6,
-//     question: "Comment gérer une erreur personnalisée dans Express ?",
-//     options: [
-//       "En utilisant un middleware avec 2 paramètres",
-//       "En utilisant try/catch dans chaque route",
-//       "En ajoutant une fonction avec 4 paramètres : err, req, res, next",
-//       "Express gère automatiquement toutes les erreurs"
-//     ],
-//     answer: "En ajoutant une fonction avec 4 paramètres : err, req, res, next",
-//     explanation: "Les middlewares de gestion d'erreur dans Express ont 4 arguments. C’est ce qui permet à Express de les reconnaître comme tels."
-//   },
-//   {
-//     id: 7,
-//     question: "Quel port est généralement utilisé en développement avec Express ?",
-//     options: [
-//       "3000",
-//       "80",
-//       "443",
-//       "8080"
-//     ],
-//     answer: "3000",
-//     explanation: "Le port 3000 est une convention largement utilisée en développement local avec Express."
-//   }
-// ];
-// const quizNodeExpress = [
+
+
+export const quizNodeExpress_facile = [
+  {
+    id: 1,
+    code: false,
+    question: "Qu'est-ce que Node.js ?",
+    options: [
+      "Un framework JavaScript pour le frontend",
+      "Un moteur de base de données",
+      "Un environnement d'exécution JavaScript côté serveur",
+      "Une bibliothèque pour manipuler le DOM"
+    ],
+    answer: "Un environnement d'exécution JavaScript côté serveur",
+    explanation: "Node.js permet d'exécuter du JavaScript en dehors du navigateur, notamment pour créer des serveurs et des applications backend."
+  },
+  {
+    id: 2,
+    code: false,
+    question: "Quel module Node.js est utilisé pour créer un serveur HTTP ?",
+    options: [
+      "url",
+      "http",
+      "fs",
+      "net"
+    ],
+    answer: "http",
+    explanation: "Le module 'http' de Node.js permet de créer des serveurs HTTP de manière native, sans dépendances externes."
+  },
+  {
+    id: 3,
+    code: false,
+    question: "À quoi sert Express.js ?",
+    options: [
+      "À interroger des bases de données",
+      "À créer des interfaces graphiques",
+      "À créer des applications web en simplifiant la gestion des routes et middlewares",
+      "À compiler du code JavaScript"
+    ],
+    answer: "À créer des applications web en simplifiant la gestion des routes et middlewares",
+    explanation: "Express est un framework minimaliste et flexible pour créer des applications web en Node.js, avec un système de routage puissant."
+  },
+  {
+    id: 4,
+    code: true,
+    question: "Comment définit-on une route GET en Express ?",
+    options: [
+      "app.get('/route', callback)",
+      "app.route('/route').get(callback)",
+      "app.GET('/route', callback)",
+      "server.get('/route', callback)"
+    ],
+    answer: "app.get('/route', callback)",
+    explanation: "La méthode `app.get()` d'Express permet de gérer une requête HTTP GET vers une route spécifique."
+  },
+  {
+    id: 5,
+    code: true,
+    question: "Quel middleware permet de parser les données JSON dans Express ?",
+    options: [
+      "express.urlencoded()",
+      "express.text()",
+      "express.json()",
+      "bodyParser.text()"
+    ],
+    answer: "express.json()",
+    explanation: "`express.json()` est un middleware intégré d'Express qui permet de parser le corps des requêtes en JSON."
+  },
+  {
+    id: 6,
+    code: false,
+    question: "Comment gérer une erreur personnalisée dans Express ?",
+    options: [
+      "En utilisant un middleware avec 2 paramètres",
+      "En utilisant try/catch dans chaque route",
+      "En ajoutant une fonction avec 4 paramètres : err, req, res, next",
+      "Express gère automatiquement toutes les erreurs"
+    ],
+    answer: "En ajoutant une fonction avec 4 paramètres : err, req, res, next",
+    explanation: "Les middlewares de gestion d'erreur dans Express ont 4 arguments. C’est ce qui permet à Express de les reconnaître comme tels."
+  },
+  {
+    id: 7,
+    code: false,
+    question: "Quel port est généralement utilisé en développement avec Express ?",
+    options: [
+      "3000",
+      "80",
+      "443",
+      "8080"
+    ],
+    answer: "3000",
+    explanation: "Le port 3000 est une convention largement utilisée en développement local avec Express."
+  }
+];
+// export const quizNodeExpress = [
 //   {
 //     id: 1,
 //     question: "Quelle commande permet d'exécuter un fichier JavaScript avec Node.js ?",
@@ -813,7 +822,7 @@
 //   }
 // ];
 
-// const quizNodeExpress = [
+// export const quizNodeExpress_facile = [
 //   {
 //     id: 1,
 //     question: "Quelle est la sortie de `echo '3' + 2 * '2 chats';` ?",
@@ -1055,7 +1064,7 @@
 //     explanation: "Les interfaces ne peuvent pas être instanciées. Elles doivent être implémentées par des classes."
 //   },
 //   {
-//     id:26,
+//     id: 26,
 //     question: "Quelle est la différence principale entre `public`, `private` et `protected` ?",
 //     options: [
 //       "`private` est accessible partout, `protected` dans la classe, `public` seulement dans les enfants",
@@ -1067,14 +1076,14 @@
 //     explanation: "`private` limite l’accès à la classe elle-même, `protected` autorise l’accès aussi aux classes filles, `public` est accessible partout."
 //   },
 //   {
-//     id:27,
+//     id: 27,
 //     question: "Quelle est la sortie du code suivant : `echo (new class { public function test() { return 1; } })->test();`",
 //     options: ["Erreur", "1", "test", "null"],
 //     answer: "1",
 //     explanation: "C’est une **classe anonyme**. Elle est instanciée immédiatement et la méthode `test()` est appelée."
 //   },
 //   {
-//     id:28,
+//     id: 28,
 //     question: "Que fait `final` devant une classe ?",
 //     options: [
 //       "Elle ne peut pas contenir d’héritage",
@@ -1086,7 +1095,7 @@
 //     explanation: "Une classe `final` ne peut pas être héritée. On peut toujours l’instancier directement."
 //   },
 //   {
-//     id:29,
+//     id: 29,
 //     question: "Quelle est la différence entre `static` et une propriété d’instance ?",
 //     options: [
 //       "Aucune, elles sont toutes accessibles avec `->`",
@@ -1098,21 +1107,21 @@
 //     explanation: "Une propriété `static` appartient à la classe et non aux objets. Elle est donc partagée."
 //   },
 //   {
-//     id:30,
+//     id: 30,
 //     question: "Quel mot-clé empêche une méthode d’être redéfinie dans une classe enfant ?",
 //     options: ["private", "abstract", "final", "sealed"],
 //     answer: "final",
 //     explanation: "La méthode `final` ne peut pas être surchargée dans une classe qui hérite."
 //   },
 //   {
-//     id:31,
+//     id: 31,
 //     question: "Peut-on accéder à une propriété `private` depuis une autre instance de la même classe ?",
 //     options: ["Oui", "Non", "Seulement avec `friend`", "En PHP 8+"],
 //     answer: "Oui",
 //     explanation: "Une propriété `private` est accessible à toutes les instances **de la même classe**, même si ce n’est pas `$this`."
 //   },
 //   {
-//     id:32,
+//     id: 32,
 //     question: "Que fait une méthode `__destruct()` ?",
 //     options: [
 //       "Elle initialise l'objet",
@@ -1124,7 +1133,7 @@
 //     explanation: "`__destruct()` est appelée automatiquement quand l’objet est libéré (fin de script ou `unset`)."
 //   },
 //   {
-//     id:33,
+//     id: 33,
 //     question: "Quelle est la différence entre `interface` et `abstract class` ?",
 //     options: [
 //       "Une interface peut contenir du code",
@@ -1136,7 +1145,7 @@
 //     explanation: "Les interfaces ne contiennent **aucune implémentation**. Une classe abstraite peut en contenir partiellement."
 //   },
 //   {
-//     id:34,
+//     id: 34,
 //     question: "Comment appeler une méthode statique d’une classe sans créer d'objet ?",
 //     options: [
 //       "`new Class()->method()`",
@@ -1161,363 +1170,364 @@
 //   }
 // ];
 
-// const quizPhpPoo = [
-//   {
-//     id: 1,
-//     question: "Quelle est la différence principale entre `public`, `private` et `protected` ?",
-//     options: [
-//       "`private` est accessible partout, `protected` dans la classe, `public` seulement dans les enfants",
-//       "`public` est accessible partout, `private` seulement dans la classe, `protected` dans la classe et ses enfants",
-//       "`protected` est plus sécurisé que `private`",
-//       "Il n'y a aucune différence réelle"
-//     ],
-//     answer: "`public` est accessible partout, `private` seulement dans la classe, `protected` dans la classe et ses enfants",
-//     explanation: "`private` limite l’accès à la classe elle-même, `protected` autorise l’accès aussi aux classes filles, `public` est accessible partout."
-//   },
-//   {
-//     id: 2,
-//     question: "Quelle est la sortie du code suivant : `echo (new class { public function test() { return 1; } })->test();`",
-//     options: ["Erreur", "1", "test", "null"],
-//     answer: "1",
-//     explanation: "C’est une **classe anonyme**. Elle est instanciée immédiatement et la méthode `test()` est appelée."
-//   },
-//   {
-//     id: 3,
-//     question: "Que fait `final` devant une classe ?",
-//     options: [
-//       "Elle ne peut pas contenir d’héritage",
-//       "Elle ne peut pas être étendue",
-//       "Ses méthodes sont toutes privées",
-//       "Elle ne peut pas contenir d’attribut"
-//     ],
-//     answer: "Elle ne peut pas être étendue",
-//     explanation: "Une classe `final` ne peut pas être héritée. On peut toujours l’instancier directement."
-//   },
-//   {
-//     id: 4,
-//     question: "Quelle est la différence entre `static` et une propriété d’instance ?",
-//     options: [
-//       "Aucune, elles sont toutes accessibles avec `->`",
-//       "`static` est partagée entre toutes les instances",
-//       "Une propriété d’instance est toujours constante",
-//       "Une propriété `static` ne peut pas changer de valeur"
-//     ],
-//     answer: "`static` est partagée entre toutes les instances",
-//     explanation: "Une propriété `static` appartient à la classe et non aux objets. Elle est donc partagée."
-//   },
-//   {
-//     id: 5,
-//     question: "Quel mot-clé empêche une méthode d’être redéfinie dans une classe enfant ?",
-//     options: ["private", "abstract", "final", "sealed"],
-//     answer: "final",
-//     explanation: "La méthode `final` ne peut pas être surchargée dans une classe qui hérite."
-//   },
-//   {
-//     id: 6,
-//     question: "Peut-on accéder à une propriété `private` depuis une autre instance de la même classe ?",
-//     options: ["Oui", "Non", "Seulement avec `friend`", "En PHP 8+"],
-//     answer: "Oui",
-//     explanation: "Une propriété `private` est accessible à toutes les instances **de la même classe**, même si ce n’est pas `$this`."
-//   },
-//   {
-//     id: 7,
-//     question: "Que fait une méthode `__destruct()` ?",
-//     options: [
-//       "Elle initialise l'objet",
-//       "Elle nettoie automatiquement les valeurs après instanciation",
-//       "Elle est appelée quand l'objet est détruit ou libéré",
-//       "Elle transforme l'objet en tableau"
-//     ],
-//     answer: "Elle est appelée quand l'objet est détruit ou libéré",
-//     explanation: "`__destruct()` est appelée automatiquement quand l’objet est libéré (fin de script ou `unset`)."
-//   },
-//   {
-//     id: 8,
-//     question: "Quelle est la différence entre `interface` et `abstract class` ?",
-//     options: [
-//       "Une interface peut contenir du code",
-//       "Une classe abstraite peut avoir des propriétés et du code",
-//       "Une interface peut être instanciée",
-//       "Une classe abstraite ne peut pas être héritée"
-//     ],
-//     answer: "Une classe abstraite peut avoir des propriétés et du code",
-//     explanation: "Les interfaces ne contiennent **aucune implémentation**. Une classe abstraite peut en contenir partiellement."
-//   },
-//   {
-//     id: 9,
-//     question: "Comment appeler une méthode statique d’une classe sans créer d'objet ?",
-//     options: [
-//       "`new Class()->method()`",
-//       "`Class::method()`",
-//       "`Class->method()`",
-//       "`method(Class)`"
-//     ],
-//     answer: "`Class::method()`",
-//     explanation: "La syntaxe `Class::method()` appelle une méthode statique directement."
-//   },
-//   {
-//     id: 10,
-//     question: "Quel est le rôle de `__get($prop)` en PHP orienté objet ?",
-//     options: [
-//       "Accéder à des propriétés privées ou protégées dynamiquement",
-//       "Créer un raccourci vers une méthode",
-//       "Transformer la valeur d’un tableau",
-//       "Lire automatiquement des fichiers externes"
-//     ],
-//     answer: "Accéder à des propriétés privées ou protégées dynamiquement",
-//     explanation: "`__get()` est une méthode magique appelée quand on tente d’accéder à une propriété non accessible normalement."
-//   }
-// ];
+export const quizPhpPoo = [
+  {
+    id: 1,
+    code: false,
+    question: "Quelle est la différence principale entre `public`, `private` et `protected` ?",
+    options: [
+      "`private` est accessible partout, `protected` dans la classe, `public` seulement dans les enfants",
+      "`public` est accessible partout, `private` seulement dans la classe, `protected` dans la classe et ses enfants",
+      "`protected` est plus sécurisé que `private`",
+      "Il n'y a aucune différence réelle"
+    ],
+    answer: "`public` est accessible partout, `private` seulement dans la classe, `protected` dans la classe et ses enfants",
+    explanation: "`private` limite l’accès à la classe elle-même, `protected` autorise l’accès aussi aux classes filles, `public` est accessible partout."
+  },
+  {
+    id: 2,
+    question: "Quelle est la sortie du code suivant : `echo (new class { public function test() { return 1; } })->test();`",
+    options: ["Erreur", "1", "test", "null"],
+    answer: "1",
+    explanation: "C’est une **classe anonyme**. Elle est instanciée immédiatement et la méthode `test()` est appelée."
+  },
+  {
+    id: 3,
+    question: "Que fait `final` devant une classe ?",
+    options: [
+      "Elle ne peut pas contenir d’héritage",
+      "Elle ne peut pas être étendue",
+      "Ses méthodes sont toutes privées",
+      "Elle ne peut pas contenir d’attribut"
+    ],
+    answer: "Elle ne peut pas être étendue",
+    explanation: "Une classe `final` ne peut pas être héritée. On peut toujours l’instancier directement."
+  },
+  {
+    id: 4,
+    question: "Quelle est la différence entre `static` et une propriété d’instance ?",
+    options: [
+      "Aucune, elles sont toutes accessibles avec `->`",
+      "`static` est partagée entre toutes les instances",
+      "Une propriété d’instance est toujours constante",
+      "Une propriété `static` ne peut pas changer de valeur"
+    ],
+    answer: "`static` est partagée entre toutes les instances",
+    explanation: "Une propriété `static` appartient à la classe et non aux objets. Elle est donc partagée."
+  },
+  {
+    id: 5,
+    question: "Quel mot-clé empêche une méthode d’être redéfinie dans une classe enfant ?",
+    options: ["private", "abstract", "final", "sealed"],
+    answer: "final",
+    explanation: "La méthode `final` ne peut pas être surchargée dans une classe qui hérite."
+  },
+  {
+    id: 6,
+    question: "Peut-on accéder à une propriété `private` depuis une autre instance de la même classe ?",
+    options: ["Oui", "Non", "Seulement avec `friend`", "En PHP 8+"],
+    answer: "Oui",
+    explanation: "Une propriété `private` est accessible à toutes les instances **de la même classe**, même si ce n’est pas `$this`."
+  },
+  {
+    id: 7,
+    question: "Que fait une méthode `__destruct()` ?",
+    options: [
+      "Elle initialise l'objet",
+      "Elle nettoie automatiquement les valeurs après instanciation",
+      "Elle est appelée quand l'objet est détruit ou libéré",
+      "Elle transforme l'objet en tableau"
+    ],
+    answer: "Elle est appelée quand l'objet est détruit ou libéré",
+    explanation: "`__destruct()` est appelée automatiquement quand l’objet est libéré (fin de script ou `unset`)."
+  },
+  {
+    id: 8,
+    question: "Quelle est la différence entre `interface` et `abstract class` ?",
+    options: [
+      "Une interface peut contenir du code",
+      "Une classe abstraite peut avoir des propriétés et du code",
+      "Une interface peut être instanciée",
+      "Une classe abstraite ne peut pas être héritée"
+    ],
+    answer: "Une classe abstraite peut avoir des propriétés et du code",
+    explanation: "Les interfaces ne contiennent **aucune implémentation**. Une classe abstraite peut en contenir partiellement."
+  },
+  {
+    id: 9,
+    question: "Comment appeler une méthode statique d’une classe sans créer d'objet ?",
+    options: [
+      "`new Class()->method()`",
+      "`Class::method()`",
+      "`Class->method()`",
+      "`method(Class)`"
+    ],
+    answer: "`Class::method()`",
+    explanation: "La syntaxe `Class::method()` appelle une méthode statique directement."
+  },
+  {
+    id: 10,
+    question: "Quel est le rôle de `__get($prop)` en PHP orienté objet ?",
+    options: [
+      "Accéder à des propriétés privées ou protégées dynamiquement",
+      "Créer un raccourci vers une méthode",
+      "Transformer la valeur d’un tableau",
+      "Lire automatiquement des fichiers externes"
+    ],
+    answer: "Accéder à des propriétés privées ou protégées dynamiquement",
+    explanation: "`__get()` est une méthode magique appelée quand on tente d’accéder à une propriété non accessible normalement."
+  }
+];
 
-// const quizNodeExpress = [
-//   {
-//     id: 1,
-//     question: "Quelle méthode magique est invoquée lors de l'accès à une propriété inaccessible d'un objet ?",
-//     options: ["__get", "__set", "__call", "__isset"],
-//     answer: "__get",
-//     explanation: "`__get` est appelée quand on tente d'accéder à une propriété non accessible (inexistante ou non publique)."
-//   },
-//   {
-//     id: 2,
-//     question: "Quelle est la différence entre une interface et une classe abstraite en PHP ?",
-//     options: [
-//       "Une interface peut contenir des propriétés",
-//       "Une classe abstraite ne peut pas avoir de constructeur",
-//       "Une interface ne peut contenir que des méthodes sans implémentation",
-//       "Il n'y a aucune différence"
-//     ],
-//     answer: "Une interface ne peut contenir que des méthodes sans implémentation",
-//     explanation: "Les interfaces ne contiennent que des déclarations de méthodes publiques sans corps."
-//   },
-//   {
-//     id: 3,
-//     question: "Que permet le mot-clé `final` en PHP ?",
-//     options: [
-//       "Empêche une classe d'être instanciée",
-//       "Empêche une méthode d'être redéfinie ou une classe d'être héritée",
-//       "Déclare une constante",
-//       "Définit une variable statique"
-//     ],
-//     answer: "Empêche une méthode d'être redéfinie ou une classe d'être héritée",
-//     explanation: "`final` appliqué à une classe empêche l’héritage, à une méthode empêche la redéfinition."
-//   },
-//   {
-//     id: 4,
-//     question: "Quel est l'intérêt principal des traits en PHP ?",
-//     options: [
-//       "Ils permettent l'héritage multiple",
-//       "Ils remplacent les interfaces",
-//       "Ils permettent de créer des objets dynamiquement",
-//       "Ils définissent des types de données"
-//     ],
-//     answer: "Ils permettent l'héritage multiple",
-//     explanation: "Les traits permettent de partager du code entre classes sans héritage hiérarchique."
-//   },
-//   {
-//     id: 5,
-//     question: "Quelle méthode magique est invoquée lorsqu’un objet est utilisé comme une chaîne ?",
-//     options: ["__call", "__get", "__invoke", "__toString"],
-//     answer: "__toString",
-//     explanation: "`__toString` est appelée lorsqu’un objet est converti en chaîne, par exemple via `echo $objet`."
-//   },
-//   {
-//     id: 6,
-//     question: "Quelle est la portée par défaut d'une propriété dans une classe PHP ?",
-//     options: ["private", "protected", "public", "static"],
-//     answer: "public",
-//     explanation: "Si aucune visibilité n’est précisée, PHP assigne `public` par défaut."
-//   },
-//   {
-//     id: 7,
-//     question: "Qu’est-ce que le late static binding (liaison tardive statique) en PHP ?",
-//     options: [
-//       "Une méthode de chargement automatique des classes",
-//       "Une liaison de méthode à l’exécution basée sur `self`",
-//       "Utilisation de `static::` pour appeler des méthodes dans un contexte d'héritage",
-//       "Un moyen d’exécuter du code après destruction de l’objet"
-//     ],
-//     answer: "Utilisation de `static::` pour appeler des méthodes dans un contexte d'héritage",
-//     explanation: "`static::` permet de référencer la classe réellement appelée à l'exécution, contrairement à `self::`."
-//   },
-//   {
-//     id: 8,
-//     question: "Que se passe-t-il si une classe implémente une interface sans en définir toutes les méthodes ?",
-//     options: [
-//       "Une erreur fatale se produit",
-//       "PHP ignore l’interface",
-//       "PHP génère un warning",
-//       "La classe devient abstraite automatiquement"
-//     ],
-//     answer: "Une erreur fatale se produit",
-//     explanation: "Les interfaces doivent être implémentées intégralement, sinon PHP génère une erreur fatale."
-//   },
-//   {
-//     id: 9,
-//     question: "Comment appelle-t-on une classe instanciée dans une autre classe via le constructeur ?",
-//     options: ["Aggregation", "Composition", "Héritage", "Clonage"],
-//     answer: "Composition",
-//     explanation: "La composition consiste à utiliser un objet comme propriété d’un autre pour former un tout fonctionnel."
-//   },
-//   {
-//     id: 10,
-//     question: "À quoi sert l’opérateur `instanceof` en PHP ?",
-//     options: [
-//       "Comparer deux objets",
-//       "Tester si une classe hérite d’une interface",
-//       "Vérifier qu’un objet est d’un type donné",
-//       "Créer une instance d’une classe dynamiquement"
-//     ],
-//     answer: "Vérifier qu’un objet est d’un type donné",
-//     explanation: "`instanceof` vérifie qu’un objet est une instance d’une classe ou interface donnée."
-//   },
-//   {
-//     id: 11,
-//     question: "Peut-on instancier une classe abstraite ?",
-//     options: ["Oui", "Non", "Oui si elle a un constructeur", "Uniquement via une interface"],
-//     answer: "Non",
-//     explanation: "Une classe abstraite ne peut être instanciée directement ; elle sert de modèle pour ses enfants."
-//   },
-//   {
-//     id: 12,
-//     question: "Qu’est-ce que le polymorphisme en PHP ?",
-//     options: [
-//       "La surcharge des fonctions",
-//       "L'utilisation de plusieurs classes avec la même interface",
-//       "L'encapsulation des objets",
-//       "La duplication des objets"
-//     ],
-//     answer: "L'utilisation de plusieurs classes avec la même interface",
-//     explanation: "Le polymorphisme permet d’utiliser différents objets via une même interface ou classe de base."
-//   },
-//   {
-//     id: 13,
-//     question: "Quel mot-clé permet d'accéder à la classe parente ?",
-//     options: ["base", "super", "parent", "static"],
-//     answer: "parent",
-//     explanation: "`parent::` permet d’appeler une méthode ou un constructeur de la classe parente."
-//   },
-//   {
-//     id: 14,
-//     question: "Quelle méthode magique est appelée lors de la sérialisation d’un objet ?",
-//     options: ["__sleep", "__wakeup", "__serialize", "__destruct"],
-//     answer: "__sleep",
-//     explanation: "`__sleep` est invoquée juste avant la sérialisation pour définir quelles propriétés seront sauvegardées."
-//   },
-//   {
-//     id: 15,
-//     question: "Quelle est la différence entre `static` et `self` ?",
-//     options: [
-//       "`static` est dynamique, `self` est statique",
-//       "`self` utilise le late binding",
-//       "Il n'y a aucune différence",
-//       "`self` accède toujours au parent"
-//     ],
-//     answer: "`static` est dynamique, `self` est statique",
-//     explanation: "`static::` respecte la classe réelle à l’exécution (late binding), `self::` est lié à la classe définie."
-//   },
-//   {
-//     id: 16,
-//     question: "Quelle est la bonne syntaxe pour utiliser un trait dans une classe ?",
-//     options: ["use MonTrait();", "include MonTrait;", "trait MonTrait;", "use MonTrait;"],
-//     answer: "use MonTrait;",
-//     explanation: "Pour inclure un trait dans une classe, on utilise le mot-clé `use`."
-//   },
-//   {
-//     id: 17,
-//     question: "Les propriétés statiques appartiennent :",
-//     options: [
-//       "À chaque instance séparément",
-//       "À la classe et sont partagées",
-//       "Seulement aux classes abstraites",
-//       "Uniquement aux interfaces"
-//     ],
-//     answer: "À la classe et sont partagées",
-//     explanation: "Les propriétés statiques sont partagées entre toutes les instances et accessibles via la classe."
-//   },
-//   {
-//     id: 18,
-//     question: "Quel est l'effet de `clone` sur un objet ?",
-//     options: [
-//       "Il copie les valeurs uniquement des propriétés publiques",
-//       "Il copie uniquement les références",
-//       "Il crée une nouvelle instance avec les mêmes valeurs",
-//       "Il appelle le constructeur de l’objet"
-//     ],
-//     answer: "Il crée une nouvelle instance avec les mêmes valeurs",
-//     explanation: "Le mot-clé `clone` copie un objet en créant une nouvelle instance avec les mêmes propriétés."
-//   },
-//   {
-//     id: 19,
-//     question: "Que fait la méthode magique `__call` ?",
-//     options: [
-//       "Elle est appelée lors d'une méthode statique inconnue",
-//       "Elle est appelée lors d'un appel à une méthode inaccessible ou inexistante",
-//       "Elle appelle une fonction en dehors de la classe",
-//       "Elle est appelée lors de la création de l’objet"
-//     ],
-//     answer: "Elle est appelée lors d'un appel à une méthode inaccessible ou inexistante",
-//     explanation: "`__call` est déclenchée si une méthode appelée n’est pas visible ou définie dans l’objet."
-//   },
-//   {
-//     id: 20,
-//     question: "Une classe peut-elle hériter de plusieurs classes en PHP ?",
-//     options: ["Oui", "Non", "Oui si elles sont abstraites", "Seulement via des interfaces"],
-//     answer: "Non",
-//     explanation: "PHP ne permet pas l'héritage multiple entre classes, mais les traits comblent ce manque."
-//   },
-//   {
-//     id: 21,
-//     question: "Comment PHP résout-il les conflits entre méthodes dans plusieurs traits ?",
-//     options: [
-//       "Il choisit arbitrairement une méthode",
-//       "La dernière méthode écrase les précédentes",
-//       "Il faut utiliser `insteadof` pour les résoudre",
-//       "Les conflits sont ignorés"
-//     ],
-//     answer: "Il faut utiliser `insteadof` pour les résoudre",
-//     explanation: "`insteadof` permet de spécifier quelle méthode doit être utilisée en cas de conflit de traits."
-//   },
-//   {
-//     id: 22,
-//     question: "Quelle est la bonne façon d'utiliser un namespace ?",
-//     options: [
-//       "require('namespace.php');",
-//       "use MonNamespace\\MaClasse;",
-//       "include MonNamespace;",
-//       "namespace(MonNamespace)"
-//     ],
-//     answer: "use MonNamespace\\MaClasse;",
-//     explanation: "Le mot-clé `use` permet d'importer une classe d’un espace de nom."
-//   },
-//   {
-//     id: 23,
-//     question: "Peut-on instancier une interface ?",
-//     options: ["Oui", "Non", "Oui si elle est abstraite", "Oui via `new Interface()`"],
-//     answer: "Non",
-//     explanation: "Une interface ne peut être instanciée ; elle doit être implémentée par une classe."
-//   },
-//   {
-//     id: 24,
-//     question: "Quel est le rôle de `__construct` ?",
-//     options: [
-//       "Initialiser l’objet à la destruction",
-//       "Définir les propriétés privées",
-//       "Exécuter du code lors de l’instanciation",
-//       "Protéger les propriétés"
-//     ],
-//     answer: "Exécuter du code lors de l’instanciation",
-//     explanation: "`__construct` est le constructeur, exécuté à la création d’un objet."
-//   },
-//   {
-//     id: 25,
-//     question: "Peut-on redéfinir une méthode d'une interface avec une visibilité différente ?",
-//     options: ["Oui", "Non", "Oui si elle est `protected`", "Uniquement avec `final`"],
-//     answer: "Non",
-//     explanation: "Les méthodes d'interface doivent être définies comme `public` dans la classe implémentée."
-//   }
-// ];
+export const quizNodeExpress_Intermediaire = [
+  {
+    id: 1,
+    question: "Quelle méthode magique est invoquée lors de l'accès à une propriété inaccessible d'un objet ?",
+    options: ["__get", "__set", "__call", "__isset"],
+    answer: "__get",
+    explanation: "`__get` est appelée quand on tente d'accéder à une propriété non accessible (inexistante ou non publique)."
+  },
+  {
+    id: 2,
+    question: "Quelle est la différence entre une interface et une classe abstraite en PHP ?",
+    options: [
+      "Une interface peut contenir des propriétés",
+      "Une classe abstraite ne peut pas avoir de constructeur",
+      "Une interface ne peut contenir que des méthodes sans implémentation",
+      "Il n'y a aucune différence"
+    ],
+    answer: "Une interface ne peut contenir que des méthodes sans implémentation",
+    explanation: "Les interfaces ne contiennent que des déclarations de méthodes publiques sans corps."
+  },
+  {
+    id: 3,
+    question: "Que permet le mot-clé `final` en PHP ?",
+    options: [
+      "Empêche une classe d'être instanciée",
+      "Empêche une méthode d'être redéfinie ou une classe d'être héritée",
+      "Déclare une constante",
+      "Définit une variable statique"
+    ],
+    answer: "Empêche une méthode d'être redéfinie ou une classe d'être héritée",
+    explanation: "`final` appliqué à une classe empêche l’héritage, à une méthode empêche la redéfinition."
+  },
+  {
+    id: 4,
+    question: "Quel est l'intérêt principal des traits en PHP ?",
+    options: [
+      "Ils permettent l'héritage multiple",
+      "Ils remplacent les interfaces",
+      "Ils permettent de créer des objets dynamiquement",
+      "Ils définissent des types de données"
+    ],
+    answer: "Ils permettent l'héritage multiple",
+    explanation: "Les traits permettent de partager du code entre classes sans héritage hiérarchique."
+  },
+  {
+    id: 5,
+    question: "Quelle méthode magique est invoquée lorsqu’un objet est utilisé comme une chaîne ?",
+    options: ["__call", "__get", "__invoke", "__toString"],
+    answer: "__toString",
+    explanation: "`__toString` est appelée lorsqu’un objet est converti en chaîne, par exemple via `echo $objet`."
+  },
+  {
+    id: 6,
+    question: "Quelle est la portée par défaut d'une propriété dans une classe PHP ?",
+    options: ["private", "protected", "public", "static"],
+    answer: "public",
+    explanation: "Si aucune visibilité n’est précisée, PHP assigne `public` par défaut."
+  },
+  {
+    id: 7,
+    question: "Qu’est-ce que le late static binding (liaison tardive statique) en PHP ?",
+    options: [
+      "Une méthode de chargement automatique des classes",
+      "Une liaison de méthode à l’exécution basée sur `self`",
+      "Utilisation de `static::` pour appeler des méthodes dans un contexte d'héritage",
+      "Un moyen d’exécuter du code après destruction de l’objet"
+    ],
+    answer: "Utilisation de `static::` pour appeler des méthodes dans un contexte d'héritage",
+    explanation: "`static::` permet de référencer la classe réellement appelée à l'exécution, contrairement à `self::`."
+  },
+  {
+    id: 8,
+    question: "Que se passe-t-il si une classe implémente une interface sans en définir toutes les méthodes ?",
+    options: [
+      "Une erreur fatale se produit",
+      "PHP ignore l’interface",
+      "PHP génère un warning",
+      "La classe devient abstraite automatiquement"
+    ],
+    answer: "Une erreur fatale se produit",
+    explanation: "Les interfaces doivent être implémentées intégralement, sinon PHP génère une erreur fatale."
+  },
+  {
+    id: 9,
+    question: "Comment appelle-t-on une classe instanciée dans une autre classe via le constructeur ?",
+    options: ["Aggregation", "Composition", "Héritage", "Clonage"],
+    answer: "Composition",
+    explanation: "La composition consiste à utiliser un objet comme propriété d’un autre pour former un tout fonctionnel."
+  },
+  {
+    id: 10,
+    question: "À quoi sert l’opérateur `instanceof` en PHP ?",
+    options: [
+      "Comparer deux objets",
+      "Tester si une classe hérite d’une interface",
+      "Vérifier qu’un objet est d’un type donné",
+      "Créer une instance d’une classe dynamiquement"
+    ],
+    answer: "Vérifier qu’un objet est d’un type donné",
+    explanation: "`instanceof` vérifie qu’un objet est une instance d’une classe ou interface donnée."
+  },
+  {
+    id: 11,
+    question: "Peut-on instancier une classe abstraite ?",
+    options: ["Oui", "Non", "Oui si elle a un constructeur", "Uniquement via une interface"],
+    answer: "Non",
+    explanation: "Une classe abstraite ne peut être instanciée directement ; elle sert de modèle pour ses enfants."
+  },
+  {
+    id: 12,
+    question: "Qu’est-ce que le polymorphisme en PHP ?",
+    options: [
+      "La surcharge des fonctions",
+      "L'utilisation de plusieurs classes avec la même interface",
+      "L'encapsulation des objets",
+      "La duplication des objets"
+    ],
+    answer: "L'utilisation de plusieurs classes avec la même interface",
+    explanation: "Le polymorphisme permet d’utiliser différents objets via une même interface ou classe de base."
+  },
+  {
+    id: 13,
+    question: "Quel mot-clé permet d'accéder à la classe parente ?",
+    options: ["base", "super", "parent", "static"],
+    answer: "parent",
+    explanation: "`parent::` permet d’appeler une méthode ou un constructeur de la classe parente."
+  },
+  {
+    id: 14,
+    question: "Quelle méthode magique est appelée lors de la sérialisation d’un objet ?",
+    options: ["__sleep", "__wakeup", "__serialize", "__destruct"],
+    answer: "__sleep",
+    explanation: "`__sleep` est invoquée juste avant la sérialisation pour définir quelles propriétés seront sauvegardées."
+  },
+  {
+    id: 15,
+    question: "Quelle est la différence entre `static` et `self` ?",
+    options: [
+      "`static` est dynamique, `self` est statique",
+      "`self` utilise le late binding",
+      "Il n'y a aucune différence",
+      "`self` accède toujours au parent"
+    ],
+    answer: "`static` est dynamique, `self` est statique",
+    explanation: "`static::` respecte la classe réelle à l’exécution (late binding), `self::` est lié à la classe définie."
+  },
+  {
+    id: 16,
+    question: "Quelle est la bonne syntaxe pour utiliser un trait dans une classe ?",
+    options: ["use MonTrait();", "include MonTrait;", "trait MonTrait;", "use MonTrait;"],
+    answer: "use MonTrait;",
+    explanation: "Pour inclure un trait dans une classe, on utilise le mot-clé `use`."
+  },
+  {
+    id: 17,
+    question: "Les propriétés statiques appartiennent :",
+    options: [
+      "À chaque instance séparément",
+      "À la classe et sont partagées",
+      "Seulement aux classes abstraites",
+      "Uniquement aux interfaces"
+    ],
+    answer: "À la classe et sont partagées",
+    explanation: "Les propriétés statiques sont partagées entre toutes les instances et accessibles via la classe."
+  },
+  {
+    id: 18,
+    question: "Quel est l'effet de `clone` sur un objet ?",
+    options: [
+      "Il copie les valeurs uniquement des propriétés publiques",
+      "Il copie uniquement les références",
+      "Il crée une nouvelle instance avec les mêmes valeurs",
+      "Il appelle le constructeur de l’objet"
+    ],
+    answer: "Il crée une nouvelle instance avec les mêmes valeurs",
+    explanation: "Le mot-clé `clone` copie un objet en créant une nouvelle instance avec les mêmes propriétés."
+  },
+  {
+    id: 19,
+    question: "Que fait la méthode magique `__call` ?",
+    options: [
+      "Elle est appelée lors d'une méthode statique inconnue",
+      "Elle est appelée lors d'un appel à une méthode inaccessible ou inexistante",
+      "Elle appelle une fonction en dehors de la classe",
+      "Elle est appelée lors de la création de l’objet"
+    ],
+    answer: "Elle est appelée lors d'un appel à une méthode inaccessible ou inexistante",
+    explanation: "`__call` est déclenchée si une méthode appelée n’est pas visible ou définie dans l’objet."
+  },
+  {
+    id: 20,
+    question: "Une classe peut-elle hériter de plusieurs classes en PHP ?",
+    options: ["Oui", "Non", "Oui si elles sont abstraites", "Seulement via des interfaces"],
+    answer: "Non",
+    explanation: "PHP ne permet pas l'héritage multiple entre classes, mais les traits comblent ce manque."
+  },
+  {
+    id: 21,
+    question: "Comment PHP résout-il les conflits entre méthodes dans plusieurs traits ?",
+    options: [
+      "Il choisit arbitrairement une méthode",
+      "La dernière méthode écrase les précédentes",
+      "Il faut utiliser `insteadof` pour les résoudre",
+      "Les conflits sont ignorés"
+    ],
+    answer: "Il faut utiliser `insteadof` pour les résoudre",
+    explanation: "`insteadof` permet de spécifier quelle méthode doit être utilisée en cas de conflit de traits."
+  },
+  {
+    id: 22,
+    question: "Quelle est la bonne façon d'utiliser un namespace ?",
+    options: [
+      "require('namespace.php');",
+      "use MonNamespace\\MaClasse;",
+      "include MonNamespace;",
+      "namespace(MonNamespace)"
+    ],
+    answer: "use MonNamespace\\MaClasse;",
+    explanation: "Le mot-clé `use` permet d'importer une classe d’un espace de nom."
+  },
+  {
+    id: 23,
+    question: "Peut-on instancier une interface ?",
+    options: ["Oui", "Non", "Oui si elle est abstraite", "Oui via `new Interface()`"],
+    answer: "Non",
+    explanation: "Une interface ne peut être instanciée ; elle doit être implémentée par une classe."
+  },
+  {
+    id: 24,
+    question: "Quel est le rôle de `__construct` ?",
+    options: [
+      "Initialiser l’objet à la destruction",
+      "Définir les propriétés privées",
+      "Exécuter du code lors de l’instanciation",
+      "Protéger les propriétés"
+    ],
+    answer: "Exécuter du code lors de l’instanciation",
+    explanation: "`__construct` est le constructeur, exécuté à la création d’un objet."
+  },
+  {
+    id: 25,
+    question: "Peut-on redéfinir une méthode d'une interface avec une visibilité différente ?",
+    options: ["Oui", "Non", "Oui si elle est `protected`", "Uniquement avec `final`"],
+    answer: "Non",
+    explanation: "Les méthodes d'interface doivent être définies comme `public` dans la classe implémentée."
+  }
+];
 
-const quizNodeExpress = [
+export const quizNodeExpress_Difficile = [
   {
     id: 1,
     question: `Que va afficher ce code ?
@@ -1915,4 +1925,343 @@ $obj->inexistante();`,
   }
 ];
 
-export default quizNodeExpress;
+export const quizCss = [
+  {
+    id: 1,
+    code: true,
+    question: `Que va afficher cet élément avec ce style ?
+
+<div class="box"></div>
+
+.box {
+  width: 100px;
+  padding: 20px;
+  border: 10px solid black;
+  box-sizing: border-box;
+}`,
+    options: ["Largeur totale : 100px", "Largeur totale : 140px", "Largeur totale : 160px", "Largeur totale : 60px"],
+    answer: "Largeur totale : 100px",
+    explanation: "Avec box-sizing: border-box, padding et border sont inclus dans la width."
+  },
+
+  {
+    id: 2,
+    code: true,
+    question: `Quel est l'effet de ce code ?
+
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+}`,
+    options: [
+      "Les éléments sont alignés horizontalement et inversés",
+      "Les éléments sont alignés verticalement et inversés",
+      "Les éléments sont masqués",
+      "Les éléments sont empilés horizontalement sans inversion"
+    ],
+    answer: "Les éléments sont alignés verticalement et inversés",
+    explanation: "flex-direction: column-reverse empile les éléments verticalement en inversant l'ordre."
+  },
+
+  {
+    id: 3,
+    code: false,
+    question: `Quelle propriété permet d'activer un BFC (Block Formatting Context) ?`,
+    options: ["position: relative", "overflow: hidden", "opacity: 0", "z-index: 99"],
+    answer: "overflow: hidden",
+    explanation: "overflow: hidden crée un BFC, ce qui influence le comportement du flottement et des marges."
+  },
+
+  {
+    id: 4,
+    code: true,
+    question: `Quel est le résultat de cette règle ?
+
+.box {
+  margin: 10px 20px 30px;
+}`,
+    options: [
+      "margin-top: 10px; margin-right: 20px; margin-bottom: 30px; margin-left: 20px;",
+      "margin: 10px 20px;",
+      "margin: 10px 20px 30px 40px;",
+      "Erreur"
+    ],
+    answer: "margin-top: 10px; margin-right: 20px; margin-bottom: 30px; margin-left: 20px;",
+    explanation: "Lorsque 3 valeurs sont données : top, (left/right), bottom."
+  },
+
+  {
+    id: 5,
+    code: true,
+    question: `Quelle couleur aura le texte ?
+
+<p class="a b">Hello</p>
+
+.a { color: blue; }
+.b { color: red !important; }`,
+    options: ["Bleu", "Rouge", "Violet", "Erreur"],
+    answer: "Rouge",
+    explanation: "!important sur .b surpasse .a."
+  },
+
+  {
+    id: 6,
+    code: false,
+    question: `Quelle unité n'est pas relative ?`,
+    options: ["em", "rem", "vh", "px"],
+    answer: "px",
+    explanation: "px est une unité absolue."
+  },
+
+  {
+    id: 7,
+    code: true,
+    question: `Que va faire ce sélecteur ?
+
+div + p { color: green; }`,
+    options: [
+      "Sélectionne tous les <p> dans un <div>",
+      "Sélectionne le premier <p> qui suit directement un <div>",
+      "Sélectionne tous les <p> de la page",
+      "Sélectionne les <p> précédant un <div>"
+    ],
+    answer: "Sélectionne le premier <p> qui suit directement un <div>",
+    explanation: "L'opérateur + est le sélecteur d'adjacence directe."
+  },
+
+  {
+    id: 8,
+    code: false,
+    question: `Quelle propriété permet d'espacer les lignes de texte ?`,
+    options: ["letter-spacing", "line-height", "word-spacing", "text-spacing"],
+    answer: "line-height",
+    explanation: "line-height contrôle l’espacement vertical entre lignes."
+  },
+
+  {
+    id: 9,
+    code: true,
+    question: `Quel sera la couleur affichée ?
+
+p {
+  color: red;
+}
+
+#texte {
+  color: blue;
+}
+
+p#texte {
+  color: green;
+}`,
+    options: ["Rouge", "Bleu", "Vert", "Erreur"],
+    answer: "Vert",
+    explanation: "p#texte est le sélecteur le plus spécifique."
+  },
+
+  {
+    id: 10,
+    code: true,
+    question: `À quoi sert cette propriété ?
+
+object-fit: cover;`,
+    options: [
+      "Couvre l'écran entier",
+      "Rogne le média pour remplir en gardant le ratio",
+      "Étire le média sans le rogner",
+      "Masque une partie aléatoire"
+    ],
+    answer: "Rogne le média pour remplir en gardant le ratio",
+    explanation: "object-fit: cover rogne si nécessaire pour couvrir tout l’espace."
+  },
+
+  {
+    id: 11,
+    code: true,
+    question: `Que fait ce code ?
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}`,
+    options: [
+      "Crée 3 colonnes de largeur égale",
+      "Crée 3 colonnes de largeur fixe",
+      "Crée 1 colonne et 3 lignes",
+      "Erreur"
+    ],
+    answer: "Crée 3 colonnes de largeur égale",
+    explanation: "repeat(3, 1fr) crée 3 colonnes flexibles."
+  },
+
+  {
+    id: 12,
+    code: false,
+    question: `Quel pseudo-élément permet d'insérer du contenu avant un élément ?`,
+    options: ["::after", "::before", "::first-line", "::marker"],
+    answer: "::before",
+    explanation: "::before insère du contenu avant l’élément."
+  },
+
+  {
+    id: 13,
+    code: true,
+    question: `Que vaut la spécificité de :
+
+ul li.active a { ... }`,
+    options: ["0-0-3-1", "0-1-2-1", "0-1-1-2", "0-0-2-2"],
+    answer: "0-1-2-1",
+    explanation: "1 classe (.active), 2 éléments (ul, li), 1 élément (a) = 0-1-2-1."
+  },
+
+  {
+    id: 14,
+    code: true,
+    question: `Que fait ce code ?
+
+.box {
+  transition: all 0.3s ease;
+}`,
+    options: [
+      "Rend l'élément transparent",
+      "Ajoute une animation CSS automatique",
+      "Permet d'animer les changements de propriétés",
+      "Modifie la vitesse de hover"
+    ],
+    answer: "Permet d'animer les changements de propriétés",
+    explanation: "transition anime les modifications CSS."
+  },
+
+  {
+    id: 15,
+    code: true,
+    question: `À quoi correspond ce code ?
+
+box-shadow: 0 4px 10px rgba(0,0,0,0.3);`,
+    options: [
+      "Une bordure invisible",
+      "Une ombre portée",
+      "Un flou appliqué à l’élément",
+      "Un dégradé"
+    ],
+    answer: "Une ombre portée",
+    explanation: "box-shadow ajoute une ombre externe."
+  },
+
+  {
+    id: 16,
+    code: false,
+    question: `Quel est l’effet de la propriété 'isolation: isolate;' ?`,
+    options: [
+      "Crée un nouveau contexte d’empilement",
+      "Sépare le texte du fond",
+      "Désactive l’héritage",
+      "Rend l’élément isolé du flux"
+    ],
+    answer: "Crée un nouveau contexte d’empilement",
+    explanation: "isolation: isolate force un stacking context."
+  },
+
+  {
+    id: 17,
+    code: true,
+    question: `Que fait ce code ?
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}`,
+    options: [
+      "Centre horizontalement uniquement",
+      "Centre verticalement uniquement",
+      "Centre verticalement et espace horizontalement",
+      "Inverse les éléments"
+    ],
+    answer: "Centre verticalement et espace horizontalement",
+    explanation: "align-items centre en vertical, justify-content espace en horizontal."
+  },
+
+  {
+    id: 18,
+    code: false,
+    question: `Que signifie 'z-index' ?`,
+    options: [
+      "La vitesse d'affichage",
+      "L'ordre d'empilement des éléments",
+      "La profondeur du DOM",
+      "La hauteur minimale d'un élément"
+    ],
+    answer: "L'ordre d'empilement des éléments",
+    explanation: "z-index détermine la priorité d'affichage sur l’axe Z."
+  },
+
+  {
+    id: 19,
+    code: true,
+    question: `Quel est l’effet de :
+
+img {
+  filter: grayscale(100%);
+}`,
+    options: [
+      "L'image devient très sombre",
+      "L'image devient floue",
+      "L'image devient en noir et blanc",
+      "L'image devient transparente"
+    ],
+    answer: "L'image devient en noir et blanc",
+    explanation: "grayscale(100%) enlève la saturation."
+  },
+
+  {
+    id: 20,
+    code: true,
+    question: `Que donne ce code ?
+
+.container {
+  width: min(80%, 500px);
+}`,
+    options: [
+      "Toujours 80%",
+      "Toujours 500px",
+      "La valeur la plus petite entre 80% et 500px",
+      "La valeur la plus grande entre 80% et 500px"
+    ],
+    answer: "La valeur la plus petite entre 80% et 500px",
+    explanation: "min() retourne la valeur minimale des arguments."
+  }
+];
+
+export const quizCategories = [
+  {
+    id: 'nodejs-facile',
+    title: 'Node.js & Express - Niveau Facile',
+    description: 'Questions de base sur Node.js et Express',
+    questions: quizNodeExpress_facile
+  },
+  {
+    id: 'php-poo',
+    title: 'PHP - Programmation Orientée Objet',
+    description: 'Questions sur les concepts avancés de PHP',
+    questions: quizPhpPoo
+  },
+  {
+    id: 'php-intermediaire',
+    title: 'PHP - Niveau Intermédiaire',
+    description: 'Questions intermédiaires sur PHP POO',
+    questions: quizNodeExpress_Intermediaire
+  },
+  {
+    id: 'php-difficile',
+    title: 'PHP - Niveau Difficile',
+    description: 'Questions difficiles avec exemples de code PHP',
+    questions: quizNodeExpress_Difficile
+  },
+  {
+    id: 'css',
+    title: 'CSS - Styles et Layout',
+    description: 'Questions sur CSS, Flexbox, Grid et propriétés',
+    questions: quizCss
+  }
+]
