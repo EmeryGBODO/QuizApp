@@ -9,16 +9,16 @@ export default function QuizApp({ selectedQuiz, onData }) {
   const [reponses, setreponses] = useState([])
   const [numQuestion, setnumQuestion] = useState(1);
 
-  function increment(id, question, answer, result, explanation) {
-    const valeur = { id: id, question: question, result: result, answer: answer, explanation: explanation };
+  function increment(id, question, answer, result, explanation, code) {
+    const valeur = { id: id, question: question, result: result, answer: answer, explanation: explanation, code: code };
     setreponses([...reponses, valeur]);
     setcurrentQuestion(currentQuestion + 1);
     setradioValue('');
     setnumQuestion(numQuestion + 1)
   }
 
-  function submit(id, question, answer, result, explanation) {
-    const val = { id: id, question: question, result: result, answer: answer, explanation: explanation }
+  function submit(id, question, answer, result, explanation, code) {
+    const val = { id: id, question: question, result: result, answer: answer, explanation: explanation, code: code }
     const updated = [...reponses, val];
     setreponses(updated);
     onData(updated);
@@ -48,9 +48,9 @@ export default function QuizApp({ selectedQuiz, onData }) {
                   Question {q.id}
                 </h2>
                 {q.code ? (
-                  <pre className="bg-gray-100 p-4 rounded text-sm overflow-y-scroll overflow-x-scroll max-h-80">
-                    <SyntaxHighlighter language="php" style={dracula} customStyle={{ background: 'black', margin: 0 }}>{q.question}</SyntaxHighlighter>
-                  </pre>
+                  <div className="bg-gray-900 p-4 rounded text-sm overflow-y-scroll overflow-x-scroll max-h-80">
+                    <SyntaxHighlighter language="php" style={dracula} customStyle={{ margin: 0 }}>{q.question}</SyntaxHighlighter>
+                  </div>
                 ) : (
                   <p className="text-gray-700 text-base leading-relaxed">{q.question}</p>
                 )}
@@ -94,7 +94,8 @@ export default function QuizApp({ selectedQuiz, onData }) {
                           current[0].question,
                           current[0].answer,
                           radioValue,
-                          current[0].explanation
+                          current[0].explanation,
+                          current[0].code
                         )
                       }
                     >
@@ -111,7 +112,8 @@ export default function QuizApp({ selectedQuiz, onData }) {
                           current[0].question,
                           current[0].answer,
                           radioValue,
-                          current[0].explanation
+                          current[0].explanation,
+                          current[0].code
                         )
                       }
                     >
