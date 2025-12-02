@@ -2948,6 +2948,12 @@ export const quizCategories = [
     questions: quizCss_intermediaire
   },
   {
+    id: 'css2',
+    title: 'CSS 2- Styles et Layout',
+    description: 'Questions sur CSS, Flexbox, Grid et propriétés',
+    questions: quizCss_difficile
+  },
+  {
     id: 'css3',
       title: 'CSS 3- Styles et Layout',
         description: 'Questions avancées sur CSS, Flexbox, Grid et propriétés',
